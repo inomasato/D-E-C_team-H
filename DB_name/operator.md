@@ -8,7 +8,7 @@
 |ログインID|operator_loginId|varchar(50)||@|||
 |メールアドレス|operator_mail|varchar(50)||@||「@」マーク無しは弾く|
 |パスワード|operator_password|varchar(30)||@||
-|電話番号|operator_tell||||@||
-|作成日時|operator_created||@||||
-|編集日時|operator_updated||@||||
-|削除日時|operator_deleted||||||
+|電話番号|operator_tell|varchar(12)||@|||
+|作成日時|operator_created|datetime||@|||
+|編集日時|operator_updated|datetime||@|||
+|削除日時|operator_deleted|datetime|||||
