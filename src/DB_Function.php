@@ -86,7 +86,7 @@ class DB_function{
             $names = array_keys($bindArray);
             $i=0;
             foreach ($bindArray as $record){
-                $stmt->bindValue(":{$names[$i++]}",$record);
+                $stmt->bindValue($names[$i++],$record);
             }
         }
 
@@ -94,7 +94,7 @@ class DB_function{
             $names = array_keys($this->checks);
             $i=0;
             foreach($this->checks as $check){
-                $stmt->bindValue(":{$names[$i++]}",$check);
+                $stmt->bindValue($names[$i++],$check);
             }
         }
 
