@@ -4,7 +4,7 @@ class DB_function{
 
     private $sql;
     private $pdo;
-    private $checks = [];
+    private $checks;
 
 
     public static function creat (){
@@ -32,16 +32,15 @@ class DB_function{
          */
         $this->sql = "SELECT ";
 
-        if(count($columnNames)){
-            $this->sql .= "*";
-        }else {
-
+        if(count($columnNames)>0){
             foreach ($columnNames as $columnName) {
                 $this->sql .= "`" . $columnName . "`";
                 if (!($columnName === end($columnNames))) {
                     $this->sql .= ",";
                 }
             }
+        }else {
+            $this->sql .= "*";
         }
 
         $this->sql .= " FROM ".$tableName;
@@ -71,12 +70,21 @@ class DB_function{
     }
 
     public function toWHERE ($columnName,$cond,$checkVariable){
-
+        
         $this->sql .= " WHERE `{$columnName}` {$cond} :{$columnName}";
         $this->checks[$columnName] = $checkVariable;
-
+        
         return $this;
     }
+
+    public function toAND ($columnName,$cond,$checkVariable){
+        
+        $this->sql .= " AND `{$columnName}` {$cond} :{$columnName}";
+        $this->checks[$columnName] = $checkVariable;
+        
+        return $this;
+    }
+    
 
     public function toEXECUTE($bindArray = null){
 
