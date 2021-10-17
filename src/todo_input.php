@@ -25,8 +25,7 @@ include("DB_Function.php");
         件名: <input type="text" name="post[post_title]" size=40>
       </div>
       <div>
-        内容: <textarea name = "post[post_content]" rows = 10 cols = 40>
-            </textarea><br>
+        内容: <textarea name = "post[post_content]" rows = 10 cols = 40></textarea><br>
       </div>
       <div>
         <button>Posting</button>
