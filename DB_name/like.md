@@ -11,7 +11,7 @@
 
 
 CREATE TABLE `like_table` (
-  `like_id` int NOT NULL primary　key auto increment, 
+  `like_id` int NOT NULL primary key AUTO_INCREMENT, 
   `like_user_id` int NOT NULL,
   `like_post_id` int NOT NULL,
   `created` datetime NOT NULL
