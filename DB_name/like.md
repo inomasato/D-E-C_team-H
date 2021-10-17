@@ -10,7 +10,7 @@
 |押した時間|create|datetime||||
 
 
-CREATE TABLE `like_table` (
+CREATE TABLE `like` (
   `like_id` int NOT NULL primary key AUTO_INCREMENT, 
   `like_user_id` int NOT NULL,
   `like_post_id` int NOT NULL,
