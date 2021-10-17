@@ -7,7 +7,7 @@ $operator = $_POST["operator"];
 $act = DB_function::creat()
 ->connect("team_h")
 ->toINSERT("operator",$operator)
-->toEXECUTE($operator);
+->toEXECUTE();
 
 echo $act;
 
