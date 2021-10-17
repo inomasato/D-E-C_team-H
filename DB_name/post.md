@@ -10,3 +10,4 @@
 |本文|post_content|varchar(255)||@|||
 |作成日時|post_created|datetime||@|||
 |更新日時|post_updated|datetime||@|||
+|いいね|post_like_count|int||@|||
