@@ -13,7 +13,7 @@
 |いいね|post_like_count|int(11)||@||default=0|
 
 CREATE TABLE `post_table` (
-  `post_id` int(11) NOT NULL PRIMARY KEY auto increment,
+  `post_id` int(11) NOT NULL PRIMARY KEY auto_increment,
   `post_user_id` int(11) NOT NULL,
   `post_title` varchar(100) NOT NULL,
   `post_content` varchar(255) NOT NULL,
