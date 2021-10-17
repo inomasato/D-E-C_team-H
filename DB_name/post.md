@@ -4,7 +4,7 @@
 
 |和名|属名|型|PK|NN|FK|備考|
 |:---|:---|:---|:---:|:---:|:---:|---|
-|ID|post_id|int(12)|@|@||auto|
+|ID|post_id|int(16)|@|@||auto|
 |ユーザーID|post_user_id|int(30)||@|@||
 |件名|post_head|varchar(100)||@|||
 |本文|post_content|varchar(255)||@|||
