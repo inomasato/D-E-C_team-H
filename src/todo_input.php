@@ -17,7 +17,7 @@ include("DB_Function.php");
 <body>
   <form action="todo_create.php" method="POST">
     <fieldset>
-      <legend align = "center">Posting（入力画面）</legend>
+      <legend>Posting（入力画面）</legend>
       <a href="todo_read.php">みんなの投稿</a>
       <a href="todo_logout.php">ログアウト</a>
       <input type="hidden" name="post[post_user_id]" value="1">
