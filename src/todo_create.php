@@ -1,7 +1,7 @@
 <?php
-session_start();
+//session_start();
 include("DB_Function.php");
-check_session_id();
+//check_session_id();
 
 // if (
 //   !isset($_POST['title']) || $_POST['title'] == '' ||
