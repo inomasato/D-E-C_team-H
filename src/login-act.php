@@ -4,9 +4,7 @@ require("DB_Function.php");
 
 $operator = $_POST["operator"];
 
-$act = DB_function::creat()
-->connect("team_h")
-->toSELECT("operator")
+$act = DB_function::creat()->connect("team_h")->toSELECT("operator")
 ->toWHERE("operator_loginId","=",$operator["operator_loginId"])
 ->toAND("operator_password","=",$operator["operator_password"])
 ->toEXECUTE();

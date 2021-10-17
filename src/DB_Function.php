@@ -26,16 +26,16 @@ class DB_function{
         }
     }
 
-    public function toSELECT ($tableName,$columnNames = []) {
+    public function toSELECT ($tableName,$columns = []) {
         /* $tableName テーブル名
          * $columnNames 取得したい列名(配列、全ての時は[*])
          */
         $this->sql = "SELECT ";
 
-        if(count($columnNames)>0){
-            foreach ($columnNames as $columnName) {
-                $this->sql .= "`" . $columnName . "`";
-                if (!($columnName === end($columnNames))) {
+        if(count($columns)>0){
+            foreach ($columns as $column) {
+                $this->sql .= "`" . $column . "`";
+                if (!($column === end($column))) {
                     $this->sql .= ",";
                 }
             }
