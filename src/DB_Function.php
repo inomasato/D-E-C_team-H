@@ -4,8 +4,8 @@ class DB_function{
 
     private $sql;
     private $pdo;
-    private $checks;
-
+    private $checks=[];
+    private $bindArray;
 
     public static function creat (){
         return new DB_function();
@@ -49,6 +49,7 @@ class DB_function{
     }
 
     public function toINSERT($tableName,$insertData){
+      
         $this->sql = "INSERT INTO {$tableName} (";
         $values = ") VALUE (";
         $i=0;
@@ -63,6 +64,7 @@ class DB_function{
             }else{
                 $values .= ")";
             }
+            $this->bindArray[$key] = $columnName;
         }
 
         $this->sql .= $values;
@@ -86,19 +88,20 @@ class DB_function{
     }
     
 
-    public function toEXECUTE($bindArray = null){
+    public function toEXECUTE(){
 
         $stmt = $this->pdo->prepare($this->sql);
 
-        if(isset($bindArray)){
-            $names = array_keys($bindArray);
+        if(isset($this->bindArray)){
+            $names = array_keys($this->bindArray);
             $i=0;
-            foreach ($bindArray as $record){
+            foreach ($this->bindArray as $record){
                 $stmt->bindValue($names[$i++],$record);
             }
         }
 
         if(count($this->checks)>0){
+            echo "0以上";
             $names = array_keys($this->checks);
             $i=0;
             foreach($this->checks as $check){
@@ -113,7 +116,8 @@ class DB_function{
     }
 
     public function toSHOW(){
-        echo $this->sql;
+        echo $this->sql."<br>";
+        print_r($this->bindArray);
         return "end";
     }
 
