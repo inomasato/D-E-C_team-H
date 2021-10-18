@@ -2,7 +2,7 @@ const checks = {
 
     put: function(formName){
 
-        this.formArray = document.getElementsByName(formName);
+        this.formArray = document.getElementsById(formName);
         this.checkArray = [];
 
         for(let i=0; i<this.formArray.length; i++){
@@ -21,6 +21,7 @@ const checks = {
 
         for(let i=0; i<mandatory.length; i++){
             if(checks[mandatory[i]]){
+                formArray[mandatory].style.color = "rgb(85, 85, 85)";
                 return this;
             }
         }
@@ -30,25 +31,25 @@ const checks = {
 
 //下のコードは過去作ったやつだからここでは使えない
 
-let input = [document.getElementById("text"),
-             document.getElementById("bordershape"),
-             document.getElementById("textcolor"),
-             document.getElementById("bordercolor"),
-             document.getElementById("backcolor")];
+// let input = [document.getElementById("text"),
+//              document.getElementById("bordershape"),
+//              document.getElementById("textcolor"),
+//              document.getElementById("bordercolor"),
+//              document.getElementById("backcolor")];
 
-let btn = document.getElementById("btn");
-let flg = false;
+// let btn = document.getElementById("btn");
+// let flg = false;
 
-let checks = () =>{
-    for(i=0; i<input.length; i++){
-        if(input[i].value == ""){
-            btn.style.backgroundColor = "rgb(85, 85, 85)";
-            btn.style.color = "rgb(177, 174, 174)";
-            btn.innerText = "入力されていない箇所があります";
-            return false;
-        }
-    }
-    btn.style.backgroundColor = "dodgerblue";
-    btn.style.color = "white";
-    btn.innerText = "デザインを表示";
-}
+// let checks = () =>{
+//     for(i=0; i<input.length; i++){
+//         if(input[i].value == ""){
+//             btn.style.backgroundColor = "rgb(85, 85, 85)";
+//             btn.style.color = "rgb(177, 174, 174)";
+//             btn.innerText = "入力されていない箇所があります";
+//             return false;
+//         }
+//     }
+//     btn.style.backgroundColor = "dodgerblue";
+//     btn.style.color = "white";
+//     btn.innerText = "デザインを表示";
+// }
