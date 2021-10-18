@@ -1,13 +1,13 @@
-<?
+<!-- <?
 
-$img_dir =  $_GET['img_name'];
+// $img_dir =  $_GET['img_name'];
 
-var_dump($img_dir);
+// echo "aaa";
 
-$info = getimagesize($img_dir);
+// $info = getimagesize($img_dir);
 
-header('Content-Type:'.$info['mime']);
+// header('Content-Type: image/png');
 
-readfile($img_dir);
+// return 
 
-?>
+?> -->
