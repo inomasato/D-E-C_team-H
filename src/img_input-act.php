@@ -1,10 +1,17 @@
 <?php
 
-$imgName = $_FILES['upImg']['name'];
+$imgData = $_FILES['upImg']['tmp_name'];
+$imgType = $_FILES['upImg']['type'];
 
-move_uploaded_file($_FILES['upImg']['tmp_name'],'./icon/'.$imgName);
+if($imgType === "image/png"){
+    $extension = ".png";
+}else{
+    $extension = ".jpeg";
+}
 
-echo '<img src="img.php?img_name='.$imgName.'">';
+$imgName = "icon{$extension}";
+
+move_uploaded_file($imgData,"./icon/{$imgName}");
 
 ?>
 
