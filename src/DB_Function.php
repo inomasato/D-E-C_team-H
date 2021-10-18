@@ -72,9 +72,17 @@ class DB_function{
     }
 
     public function toWHERE ($columnName,$cond,$checkVariable){
+
+        if(strpos($cond,':') !== false){
+
+            $this->sql .= " WHERE `{$columnName}` LIKE :{$columnName}";
+            $this->checks[$columnName] = $checkVariable;
+        }else{
+            $this->sql .= " WHERE `{$columnName}` {$cond} :{$columnName}";
+            $this->checks[$columnName] = $checkVariable;
+        }
         
-        $this->sql .= " WHERE `{$columnName}` {$cond} :{$columnName}";
-        $this->checks[$columnName] = $checkVariable;
+
         
         return $this;
     }
@@ -87,8 +95,15 @@ class DB_function{
         return $this;
     }
     
+    public function toOR ($columnName,$cond,$checkVariable){
+        
+        $this->sql .= " OR `{$columnName}` {$cond} :{$columnName}";
+        $this->checks[$columnName] = $checkVariable;
+        
+        return $this;
+    }
 
-    public function toEXECUTE(){
+    public function toEXECUTE($mode = "BOTH"){
 
         $stmt = $this->pdo->prepare($this->sql);
 
