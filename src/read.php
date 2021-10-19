@@ -13,8 +13,8 @@ require("DB_Function.php");
 // ->toEXECUTE();
 
 $act = DB_Function::creat()->connect("team_h")->toSELECT("post")
-->toWHERE("post_userid","=",$post["post_userid"])
-->toAND("post_postid","=",$post["post_postid"])
+->toWHERE("post_user_id","=",$post["post_user_id"])
+->toAND("post_id","=",$post["post_id"])
 ->toAND("post_created","=",$post["post_created"])
 ->toEXECUTE();
 
