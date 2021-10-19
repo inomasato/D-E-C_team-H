@@ -63,15 +63,15 @@ $output = table_set($all,2);
                 <th>タイトル</th>
                 <th>名前</th>
                 <th>更新日</th>
-                <form action="like.php" method="POST">
-                    <input type = "hidden" name="post_user_id" value="<?php echo $all[0]["post_user_id"]; ?>">
-                    <input type = "hidden" name="post_id" value="<?php echo $all[0]["post_id"]; ?>">
-                    <button>like</button>
-                </form>
             </tr>
         </thead>
         <tbody>
             <?php echo $output ?>
+            <form action="like.php" method="POST">
+                <input type = "hidden" name="post_user_id" value="<?php echo $all[0]["post_user_id"]; ?>">
+                <input type = "hidden" name="post_id" value="<?php echo $all[0]["post_id"]; ?>">
+                <button>like</button>
+            </form>
         </tbody>
     </table>
 </body>
