@@ -65,8 +65,8 @@ foreach($all as $row){
                 <th>名前</th>
                 <th>更新日</th>
                 <form action="like.php" method="POST">
-                    <input type = "hidden" name="post_user_id" value="<?php echo $all[0]["post_user_id"]; ?>">;
-                    <input type = "hidden" name="post_id" value="<?php echo $all[0]["post_id"]; ?>">;
+                    <input type = "hidden" name="post_user_id" value="<?php echo $all[0]["post_user_id"]; ?>">
+                    <input type = "hidden" name="post_id" value="<?php echo $all[0]["post_id"]; ?>">
                     <button>like</button>
                 </form>
             </tr>
