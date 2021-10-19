@@ -55,7 +55,7 @@ foreach($all as $row){
 <body>
     <header>
     </header>
-    <a href="post.php">投稿画面</a>
+    <a href="input.php">投稿画面</a>
     <a href="logout.php">logout</a>
     <legend>投稿</legend>
     <table>
