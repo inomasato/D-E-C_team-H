@@ -1,0 +1,11 @@
+# 何をしているか（担当）
+## 井上
+* read.php
+* like.php
+## 中林
+* 井上と簑原の以外
+## 簑原
+* update.php
+* input.php
+* delete.php
+* create.php

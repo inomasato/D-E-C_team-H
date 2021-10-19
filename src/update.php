@@ -15,6 +15,11 @@ $todo = $_POST["todo"];
 $deadline = $_POST["deadline"];
 $id = $_POST["id"];
 
+// $act = DB_function::creat()->connect("team_h")->toSELECT($post,)
+// ->toWHERE("operator_loginId","=",$operator["operator_loginId"])
+// ->toAND("operator_password","=",$operator["operator_password"])
+// ->toEXECUTE();
+
 //$pdo = connect_to_db();
 
 //$sql = "UPDATE todo_table SET todo=:todo, deadline=:deadline, updated_at=now() WHERE id=:id";
