@@ -26,3 +26,28 @@ function check_session_id()
     $_SESSION["session_id"] = session_id();
   }
 }
+
+function table_set($title_array,$inner_array,$border_num){
+  $th_inner = "";
+  foreach ($title_array as $title){
+      $th_inner .= "    <th>{$title}</th>\n";
+  }
+
+  $th_tags = "\n<tr>\n{$th_inner}</tr>\n";
+
+  $td_tags = "";
+  foreach ($inner_array as $record) {
+      $td_inner = "";
+      $array = array_values($record);
+      for($i=0; $i<count($array); $i++){
+          $td_inner .= "    <td>{$array[$i]}</td>\n";
+      }
+      $td_tags .= "<tr>\n{$td_inner}</tr>\n";
+  }
+
+  return "
+<table border='{$border_num}'>
+<thead>{$th_tags}</thead>
+<tbody>\n{$td_tags}</tbody>
+</table>";
+}
