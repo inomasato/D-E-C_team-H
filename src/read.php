@@ -32,7 +32,7 @@ require("DB_Function.php");
 
 $act = DB_Function::creat()->connect("team_h")->toSELECT("post",["post_user_id","post_id"])->toEXECUTE();
 
-$all = $act->fetch(PDO::FETCH_ASSOC);
+$all = $act->fetchAll(PDO::FETCH_ASSOC);
 
 foreach($all as $row){
     echo "{$row}<br>";
@@ -65,14 +65,14 @@ foreach($all as $row){
                 <th>名前</th>
                 <th>更新日</th>
                 <form action="like.php" method="POST">
-                    <input type = "hidden" name="user_id" value="<?= $all["user_id"] ?>">;
-                    <input type = "hidden" name="user_id" value="<?= $all["user_id"] ?>">;
+                    <input type = "hidden" name="user_id" value="<?= echo $all["user_id"]; ?>">;
+                    <input type = "hidden" name="user_id" value="<?= echo $all["user_id"]; ?>">;
                     <button>like</button>
                 </form>
             </tr>
         </thead>
         <tbody>
-            <?= $all ?>
+            <?= echo $all; ?>
         </tbody>
     </table>
 </body>
