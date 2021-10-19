@@ -72,7 +72,7 @@ foreach($all as $row){
             </tr>
         </thead>
         <tbody>
-            <?php echo $all; ?>
+            <?php echo $all[0]["post_content"]; ?>
         </tbody>
     </table>
 </body>
