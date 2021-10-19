@@ -30,7 +30,7 @@ require("DB_Function.php");
 //   }
 // }
 
-$act = DB_Function::creat()->connect("team_h")->toSELECT("post",["post_user_id","post_id"])->toEXECUTE();
+$act = DB_Function::creat()->connect("team_h")->toSELECT("post",["post_user_id","post_id","post_content"])->toEXECUTE();
 
 $all = $act->fetchAll(PDO::FETCH_ASSOC);
 
