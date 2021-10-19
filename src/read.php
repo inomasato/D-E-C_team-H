@@ -12,7 +12,7 @@ require("DB_Function.php");
 // ->toAND("postData_postId","=",$operator["postData_postId"])
 // ->toEXECUTE();
 
-$act = DB_Function::creat()->connect("team_h",)->toSELECT("post",$columns = ["post_user_id"])
+$act = DB_Function::creat()->connect("team_h",)->toSELECT("post",$columns = ["post_user_id", "post_id"])
 // ->toWHERE("post_user_id","=",$post["post_user_id"])
 // ->toAND("post_id","=",$post["post_id"])
 // ->toAND("post_created","=",$post["post_created"])
