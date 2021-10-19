@@ -35,7 +35,7 @@ $act = DB_Function::creat()->connect("team_h")->toSELECT("post",["post_user_id",
 
 $all = $act->fetchAll(PDO::FETCH_ASSOC);
 
-$output = table_set(["post_user_id","post_id","post_content"],$all,2);
+$output = table_set($all,2);
 // if(status == false){
 //     $error = $stmt->errorInfo();
 //     echo json_encode(["error_msg" => "{$error"])
