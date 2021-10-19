@@ -2,43 +2,17 @@
 
 require("DB_Function.php");
 
-// session_start();
-
-// $postData = $_POST("postData");
-
-// post.phpからpostData[postData_userId]と[postData_postId]を送ってもらう
-// $act = DB_function::creat()->connect("team_h")->toSELECT("postData")
-// ->toWHERE("postData_userId","=",$operator["postData_userId"])
-// ->toAND("postData_postId","=",$operator["postData_postId"])
-// ->toEXECUTE();
-
 $act = DB_Function::creat()->connect("team_h",)->toSELECT("post",$columns = ["post_user_id, post_id"])
-// ->toWHERE("post_user_id","=",$post["post_user_id"])
-// ->toAND("post_id","=",$post["post_id"])
-// ->toAND("post_created","=",$post["post_created"])
 ->toEXECUTE();
 
 $all = $act->fetch(PDO::FETCH_ASSOC);
 
 foreach($all as $row){
-    echo "{$row}
-         <br>";
+    echo "{$row}<br>";
 }
 // if(status == false){
 //     $error = $stmt->errorInfo();
 //     echo json_encode(["error_msg" => "{$error"])
-// }
-
-// $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-// $output = "";
-// foreach($result as $recode){
-//     $output .= "
-//     <tr>
-//         <td>{$recode["$title"]}</td>
-//         <td>{$recode["$user_name"]}</td>
-//         <td>{$recode["$post_created"]},/td>
-//     </tr>
-//     ";
 // }
 
 ?>
@@ -63,6 +37,11 @@ foreach($all as $row){
                 <th>名前</th>
                 <th>title</th>
                 <th>更新日</th>
+                <form action="like.php" method="POST">
+                    <input type = "hidden" name="user_id" value="<?= $all["user_id"] ?>">;
+                    <input type = "hidden" name="user_id" value="<?= $all["user_id"] ?>">;
+                    <button>like</button>
+                </form>
             </tr>
         </thead>
         <tbody>
