@@ -13,9 +13,9 @@ require("DB_Function.php");
 // ->toEXECUTE();
 
 $act = DB_Function::creat()->connect("team_h")->toSELECT("post")
-->toWHERE("post_userid","=",$operator["post_userid"])
-->toAND("post_postid","=",$operator["post_postid"])
-->toAND("post_created","=",$operator["post_created"])
+->toWHERE("post_userid","=",$post["post_userid"])
+->toAND("post_postid","=",$post["post_postid"])
+->toAND("post_created","=",$post["post_created"])
 ->toEXECUTE();
 
 $all = $act->fetch(PDO::FETCH_ASSOC);
