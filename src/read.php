@@ -12,10 +12,10 @@ require("DB_Function.php");
 // ->toAND("postData_postId","=",$operator["postData_postId"])
 // ->toEXECUTE();
 
-$act = DB_Function::creat()->connect("team_h")->toSELECT("post")
-->toWHERE("post_user_id"/*,"=",$post["post_user_id"]*/)
-->toAND("post_id"/*,"=",$post["post_id"]*/)
-->toAND("post_created"/*,"=",$post["post_created"]*/)
+$act = DB_Function::creat()->connect("team_h",)->toSELECT("post","title")
+// ->toWHERE("post_user_id","=",$post["post_user_id"])
+// ->toAND("post_id","=",$post["post_id"])
+// ->toAND("post_created","=",$post["post_created"])
 ->toEXECUTE();
 
 $all = $act->fetch(PDO::FETCH_ASSOC);
