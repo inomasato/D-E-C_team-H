@@ -1,14 +1,17 @@
 <?php
-include('functions.php');
-session_start();
+require("DB_Function.php");
 
-$user_id = $_['user_id'];
+$user_id = $_POST['user_id'];
 $post_id = $_POST['post_id'];
 
 $pdo = connect_to_db();
 
-// $sql = 'SELECT COUNT(*) FROM like_table WHERE user_id=:user_id AND post_id=:post_id';
+$sql = 'SELECT COUNT(*) FROM like_table WHERE user_id=:user_id AND post_id=:post_id';
 
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR);
+$stmt->bindValue(':post_id', $post_id, PDO::PARAM_STR);
+$status = $stmt->execute();
 
 if ($status == false) {
   $error = $stmt->errorInfo();
@@ -17,7 +20,6 @@ if ($status == false) {
 } else {
     $like_count = $stmt->fetchColumn();
     // var_dump($like_count);
-  exit();
 }
 
 if ($like_count != 0) {
