@@ -1,6 +1,7 @@
 <?php
-
+require("functions.php");
 require("DB_Function.php");
+
 
 // $pdo = connect_to_db();
 
@@ -34,9 +35,7 @@ $act = DB_Function::creat()->connect("team_h")->toSELECT("post",["post_user_id",
 
 $all = $act->fetchAll(PDO::FETCH_ASSOC);
 
-foreach($all as $row){
-    echo "{$row['post_id']}{$row['post_user_id']}<br>";
-}
+$output = table_set(["post_user_id","post_id","post_content"],$all,2);
 // if(status == false){
 //     $error = $stmt->errorInfo();
 //     echo json_encode(["error_msg" => "{$error"])
@@ -72,7 +71,7 @@ foreach($all as $row){
             </tr>
         </thead>
         <tbody>
-            <?php echo $all[0]["post_content"]; ?>
+            <?php echo $output ?>
         </tbody>
     </table>
 </body>
