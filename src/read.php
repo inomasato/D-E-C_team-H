@@ -72,7 +72,7 @@ foreach($all as $row){
             </tr>
         </thead>
         <tbody>
-            <?= echo $all; ?>
+            <?php echo $all; ?>
         </tbody>
     </table>
 </body>
