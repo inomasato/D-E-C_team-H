@@ -1,38 +1,44 @@
 <?php
 
-include("DB_Function.php");
-include("functions.php");
+require("DB_Function.php");
 
-session_start();
+// session_start();
 
-$pdo = connect_to_db();
+// $postData = $_POST("postData");
 
-$user_id = $_SESSION("user_id");
-$post_id = $_POST("post_id");               //post.phpからPOSTで送る
+// post.phpからpostData[postData_userId]と[postData_postId]を送ってもらう
+// $act = DB_function::creat()->connect("team_h")->toSELECT("postData")
+// ->toWHERE("postData_userId","=",$operator["postData_userId"])
+// ->toAND("postData_postId","=",$operator["postData_postId"])
+// ->toEXECUTE();
 
-$sql = toSELECT ($post,$post_id = []);　　//post.phpからtitleとpost_createdを持ってくる
+$act = DB_Function::creat()->connect("team_h")->toSELECT("post")
+->toWHERE("post_userid","=",$operator["post_userid"])
+->toAND("post_postid","=",$operator["post_postid"])
+->toAND("post_created","=",$operator["post_created"])
+->toEXECUTE();
 
+$all = $act->fetch(PDO::FETCH_ASSOC);
+
+foreach($all as $row){
+    echo "{$row}<br>";
+}
 // if(status == false){
 //     $error = $stmt->errorInfo();
 //     echo json_encode(["error_msg" => "{$error"])
 // }
-if ($status == false) {
-    $error = $stmt->errorInfo();
-    echo json_encode(["error_msg" => "{$error[2]}"]);
-    exit();
-} else {
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $output = "";
-    foreach($result as $recode){
-        $output .= "
-        <tr>
-            <td>{$recode["$title"]}</td>
-            <td>{$recode["$user_name"]}</td>
-            <td>{$recode["$post_created"]},/td>
-        </tr>
-        ";
-    }
-}
+
+// $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// $output = "";
+// foreach($result as $recode){
+//     $output .= "
+//     <tr>
+//         <td>{$recode["$title"]}</td>
+//         <td>{$recode["$user_name"]}</td>
+//         <td>{$recode["$post_created"]},/td>
+//     </tr>
+//     ";
+// }
 
 ?>
 
@@ -59,8 +65,7 @@ if ($status == false) {
             </tr>
         </thead>
         <tbody>
-            <?= $output ?>
-            <a href="like.php">good</a>
+            <?= $row ?>
         </tbody>
     </table>
 </body>

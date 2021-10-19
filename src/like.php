@@ -2,12 +2,13 @@
 include('functions.php');
 session_start();
 
-$user_id = $_SESSION['user_id'];
+$user_id = $_['user_id'];
 $post_id = $_POST['post_id'];
 
 $pdo = connect_to_db();
 
-$sql = 'SELECT COUNT(*) FROM like_table WHERE user_id=:user_id AND post_id=:post_id';
+// $sql = 'SELECT COUNT(*) FROM like_table WHERE user_id=:user_id AND post_id=:post_id';
+
 
 if ($status == false) {
   $error = $stmt->errorInfo();
