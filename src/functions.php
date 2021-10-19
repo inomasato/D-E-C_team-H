@@ -30,10 +30,10 @@ function check_session_id()
 function table_set($inner_array,$border_num,$title_array=[]){
 
 
-  if(count($title_array)>0){
-    $title_array = array_keys($inner_array);
+  if(count($title_array)<1){
+    $title_array = array_keys($inner_array[0]);
+    
   }
-  
   $th_inner = "";
   foreach ($title_array as $title){
       $th_inner .= "    <th>{$title}</th>\n";

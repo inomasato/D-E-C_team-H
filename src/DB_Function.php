@@ -166,7 +166,7 @@ class DB_function{
         }
     }
 
-    public function toSELECT ($tableName,$columns) {
+    public function toSELECT ($tableName,$columns=[]) {
         /* $tableName テーブル名
          * $columnNames 取得したい列名(配列、全ての時は[*])
          */
@@ -273,7 +273,11 @@ class DB_function{
     public function toSHOW(){
         echo $this->sql."<br>";
         print_r($this->bindArray);
-        return "end";
+        return "this";
+    }
+
+    public function toSQL(){
+        return $this->sql;
     }
 
 }

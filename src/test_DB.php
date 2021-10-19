@@ -1,5 +1,7 @@
 <?php
+require("functions.php");
 require("DB_Function.php");
+
 
 if(isset($_POST["test"])){
     $test = $_POST["test"];
@@ -7,17 +9,9 @@ if(isset($_POST["test"])){
 }
 
 
-$act = DB_function::creat()->connect("test")->toSELECT("test",["title","content"])->toEXECUTE();
+$act = DB_function::creat()->connect("test")->toSELECT("test")->toEXECUTE();
 $all = $act->fetchAll(PDO::FETCH_ASSOC);
-$output="";
-
-foreach($all as $rows){
-    $row = array_values($rows);
-    for($i=0; $i<count($row); $i++){
-        $output .= $row[$i].":";
-    }
-    $output.= "<br>";
-}
+$output=table_set($all,2);
 
 $rnd = random_int(0,9999999);
 
