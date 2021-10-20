@@ -198,5 +198,4 @@ class DB_function{
         return "this";
     }
 
-
 }
