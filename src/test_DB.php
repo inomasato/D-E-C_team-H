@@ -3,20 +3,16 @@ require("functions.php");
 require("DB_Function.php");
 
 if(isset($_POST["mode"])){
+    $test = $_POST["test"];
     if($_POST["mode"] == 1){
-        $test = $_POST["test"];
-        $act = DB_function::creat()->connect("test")
-        ->toUPDATE("test",$test)
-        ->toWHERE("id","=",$_POST["id"])->toEXECUTE();
+        DB_function::creat()->connect("test")->toUPDATE("test",$test)->toWHERE("id","=",$_POST["id"])->toEXECUTE();
     }else{
-        $test = $_POST["test"];
         DB_function::creat()->connect("test")->toINSERT("test",$test)->toEXECUTE();
     }
 }
 
 
-$act = DB_function::creat()->connect("test")->toSELECT("test")
-->toEXECUTE(PDO::FETCH_ASSOC);
+$act = DB_function::creat()->connect("test")->toSELECT("test")->toWHERE("title",":","テスト")->toEXECUTE(PDO::FETCH_ASSOC);
 $output=table_set($act,2);
 
 $rnd = random_int(0,9999999);

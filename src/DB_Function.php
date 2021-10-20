@@ -101,6 +101,7 @@ class DB_function{
 
     }
 
+
     public function toWHERE ($columnName,$cond,$checkVariable){
 
         if(strpos($cond,':') !== false){
