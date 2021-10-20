@@ -9,9 +9,9 @@ if(isset($_POST["test"])){
 }
 
 
-$act = DB_function::creat()->connect("test")->toSELECT("test")->toEXECUTE();
-$all = $act->fetchAll(PDO::FETCH_ASSOC);
-$output=table_set($all,2);
+$act = DB_function::creat()->connect("test")->toSELECT("test")->toWHERE("title","%:%","514")
+->toOR("title","%:%","テスト")->toEXECUTE(PDO::FETCH_ASSOC);
+$output=table_set($act,2);
 
 $rnd = random_int(0,9999999);
 
@@ -26,7 +26,7 @@ $rnd = random_int(0,9999999);
     </fieldset>
     <fieldset>
         <legend>操作</legend>
-        <button name="cnt">登録</button>
+        <button name="cnt">登録</button> <button type="button"><a href="test_DB.php">再読み込み</a></button>
     </fieldset>
 </form>
 <fieldset>
