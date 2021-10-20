@@ -181,14 +181,21 @@ class DB_function{
         }
     }
 
+    
+    public function toPDO(){
+        return $this->pdo;
+    }
+
+
+    public function toSQL(){
+        return $this->sql;
+    }
+
     public function toSHOW(){
         echo $this->sql."<br>";
         print_r($this->bindArray);
         return "this";
     }
 
-    public function toSQL(){
-        return $this->sql;
-    }
 
 }
