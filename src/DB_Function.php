@@ -57,7 +57,7 @@ class DB_function{
             $key = $names[$i++];
             $this->sql .= "`{$key}`";
             $values .= ":{$key}";
-            if(!($columnName === end($insertData))){
+            if($columnName !== end($insertData)){
                 $this->sql .= ",";
                 $values .= ",";
             }else{
@@ -70,6 +70,37 @@ class DB_function{
         return $this;
     }
 
+    public function toUPDATE ($tableName,$columnName = [],$updateData = []){
+        
+        $this->sql = "UPDATE {$tableName} SET";
+
+        if(count($updateData)>0){
+
+            $updateData = array_values($updateData);
+            for($i=0; $i<count($columnName); $i++){
+                $this->sql .= " `{$columnName[$i]}` = :{$columnName[$i]}";
+                if($columnName[$i] !== end($columnName)){
+                    $this->sql .= " ,";
+                }
+                $this->bindArray[$columnName[$i]] = $updateData[$i];
+            }
+
+        }else{
+            $updateData = array_values($columnName);
+            $columnName = array_keys($columnName);
+            for($i=0; $i<count($columnName); $i++){
+                $this->sql .= " `{$columnName[$i]}` = :{$columnName[$i]}";
+                if($columnName[$i] !== end($columnName)){
+                    $this->sql .= " ,";
+                }
+                $this->bindArray[$columnName[$i]] = $updateData[$i];
+            }
+        }
+
+        return $this;
+
+    }
+
     public function toWHERE ($columnName,$cond,$checkVariable){
 
         if(strpos($cond,':') !== false){
@@ -80,9 +111,7 @@ class DB_function{
             $this->sql .= " WHERE `{$columnName}` {$cond} :{$columnName}";
             $this->checks[$columnName] = $checkVariable;
         }
-        
-
-        
+    
         return $this;
     }
 
