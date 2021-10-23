@@ -144,6 +144,11 @@ class DB_function{
         return $this;
     }
 
+
+    public function toEXISTS(){
+
+    }
+
     public function toEXECUTE($mode = 0){
 
         $stmt = $this->pdo->prepare($this->sql);
