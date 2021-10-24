@@ -13,3 +13,7 @@ nav{
  box-shadow: 0 0 5px 1px #c0c0c0; /* 影 */
  border-radius: 10px; /* 角の丸み */
 } 
+input[type="text"],
+textarea {
+    width: 100%;
+}
