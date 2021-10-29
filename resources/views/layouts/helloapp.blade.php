@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0 user-scalable=no">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('..\resources\css\main.css') }}">
-    <link rel="stylesheet" href="{{ asset('..\resources\css\{{ $css }}') }}">
     <style>
 
     </style>
