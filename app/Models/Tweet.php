@@ -39,8 +39,9 @@ class Tweet extends Model
     public function getTweets($page)
     {
      
-        $tweets = DB::table($this->table)->where('deleted_at',null)->
-        orderBy('tweet_id','desc')->offset($page)->limit(25)->get();
+        $tweets = DB::table($this->table)->join('user',function($join){
+            $join->on('tweet.tweet_user_id','=','user.user_id');
+        })->where('tweet.deleted_at',null)->orderBy('tweet.tweet_id','desc')->offset($page)->limit(25)->get();
 
         return ['page' => $page , 'tweets' => $tweets];
 
@@ -52,8 +53,13 @@ class Tweet extends Model
         
 
         $page = $request->page * 25; 
-        $tweets = DB::table($this->table)->where('tweet_user_id',$request->target)->where('deleted_at',null)
+        $tweets = DB::table($this->table)->join('user',function($join){
+            $join->on('tweet.tweet_user_id,','=','user.user_id');
+        })->where('tweet_user_id',$request->target)->where('deleted_at',null)
         ->orderBy('tweet_id','desc')->offset($page)->limit(25)->get();
+
+        print_r($tweets);
+        exit();
 
         return ['page' => $page , 'tweets' => $tweets];
 

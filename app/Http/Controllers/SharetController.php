@@ -19,11 +19,12 @@ class SharetController extends Controller
 
         if(isset($request->page)) $page = $request->page * 25;
         
-        $user_data = $request->session()->get('user_data');
+        // $user_data = $request->session()->get('user_data');
         $tweets = $modelTweet->getTweets($page);
         
-        $likes = $modelLike->getLike($user_data->user_id,$user_data->user_likeCount);
-       
+        $likes = $modelLike->getLike(2,2);
+        // $user_data->user_id,
+        // $user_data->user_likeCount
         $judge_cnt = 0;
 
 
@@ -45,25 +46,35 @@ class SharetController extends Controller
         foreach($tweets["tweets"] as $tweet){
              $convert[$i++] = (array)$tweet;
         }
-
-        $items = $like_judge;
-        $items[] = $convert;
-        $output = "";
-
-        foreach($items as $item){
-            print_r($item);
-            exit();
-        }
-       
-
-        foreach($items as $item){
-            $output .= "{$item->tweet_content}:{$item->like_judge}";
-            echo $output."<br>";
+   
+        for($i=0; $i<count($like_judge); $i++){
+            $items[$i] = array_merge($like_judge[$i],$convert[$i]);
         }
         
-        exit();
-     
-        return view('sharet.index',['items',$items]);
+        return view('sharet.index',['items'=>$items]);
 
     }
 }
+        // foreach($likes as $like){
+        //     foreach($tweets['tweets'] as $tweet){
+        //         $like_judge[$judge_cnt] = ['like_judge' => 0];
+        //         if($like->like_tweet_id == $tweet->tweet_id){
+        //             $like_judge[$judge_cnt] = (object)['like_judge' => 1];
+        //             break;
+        //         }
+        //     }
+        //     $judge_cnt++;
+        //     unset($tweet);
+        // }
+
+        // $items = [$like_judge];
+
+        
+        // for($i=0; $i<count($like_judge); $i){
+        //     $items[$i] = array_merge($like_judge[$i],$tweets["tweets"][$i]);
+        // }
+
+        // foreach($items as $item){
+        //     print_r($item);
+            
+        // }

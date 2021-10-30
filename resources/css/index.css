@@ -20,6 +20,7 @@ button{
 
 form{
     width: 100%;
+    display: block;
 }
 
 .tweet_frame{
@@ -27,7 +28,6 @@ form{
     background-color: #F6FDFF;
     border: solid #C4C4C4;
     border-bottom: solid #A8A8A8;
-
 }
 
 

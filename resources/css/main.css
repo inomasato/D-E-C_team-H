@@ -32,6 +32,7 @@ body{
     position: fixed;
     overflow: hidden;
     box-sizing:border-box;
+    z-index: 5;
 }
 
 header{
@@ -124,7 +125,8 @@ nav{
 
 .content{
     height: 100%;
-    display: flex;
+    width: 100%;
+    display: block;
 }
 
 .footer{
