@@ -21,7 +21,8 @@ class CreateUserTable extends Migration
             $table->string('user_sick');
             $table->string('user_loginId');
             $table->string('user_password');
-            $table->char('user_iconText',7)->default('#FFFFFF');
+            $table->char('user_iconText',1)->default('＠');
+            $table->char('user_iconColor',7)->default('#FFFFFF');
             $table->char('user_iconFrame',7)->default('#C4C4C4');
             $table->char('user_iconBack',7)->default('#2FBEC7');
             $table->integer('user_likeCount')->default(0);
