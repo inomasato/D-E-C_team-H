@@ -36,10 +36,9 @@ class Tweet extends Model
     public $timestamps = false;
 
     //テーブルデータ取得のメソッド
-    public function getTweets(Request $request)
+    public function getTweets($page)
     {
-
-        $page = $request->page * 25; 
+     
         $tweets = DB::table($this->table)->where('deleted_at',null)->
         orderBy('tweet_id','desc')->offset($page)->limit(25)->get();
 
@@ -49,6 +48,8 @@ class Tweet extends Model
 
     public function getUserTweets(Request $request)
     {
+
+        
 
         $page = $request->page * 25; 
         $tweets = DB::table($this->table)->where('tweet_user_id',$request->target)->where('deleted_at',null)

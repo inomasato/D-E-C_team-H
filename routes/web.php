@@ -43,3 +43,6 @@ Route::get('follower', 'App\Http\Controllers\FollowerController@index');
 
 Route::get('mypage', 'App\Http\Controllers\MypageController@index');
 Route::post('mypage','App\Http\Controllers\MypageController@index');
+
+Route::get('create', 'App\Http\Controllers\CreateController@index');
+// Route::post('create','App\Http\Controllers\CreateController@index');
