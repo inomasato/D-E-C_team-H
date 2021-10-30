@@ -13,12 +13,14 @@ class CreateController extends Controller
         // exit;
         return view ('sharet.create',['user_data' => $user_data]);
     }
-    
+    public function add(Request $request){
+        return view ('sharet.create');
+    }
      public function create(Request $request){
          $param =[
              'tweet_content'=>$request->tweet_content,
          ];
          DB::insert('insert into tweet (tweet_content) values (:tweet_content)', $param);
-         return redirect();
+         return redirect('/sharet');
      }
 }
