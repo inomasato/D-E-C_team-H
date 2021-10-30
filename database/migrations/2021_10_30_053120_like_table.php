@@ -14,10 +14,10 @@ class LikeTable extends Migration
     public function up()
     {
         Schema::create('like', function (Blueprint $table){
-            $table->increments('like_id');
-            $table->string('like_user_id');
-            $table->string('like_tweet_id');
-            $table->timestamps();
+            $table->integer('like_user_id')->unsigned();
+            $table->foreign('like_user_id')->references('user_id')->on('user');
+            $table->integer('like_tweet_id')->unsigned();
+            $table->foreign('like_tweet_id')->references('tweet_id')->on('tweet');
         });
     }
     			
