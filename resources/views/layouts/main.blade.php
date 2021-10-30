@@ -28,7 +28,7 @@
                 <div class="menu_icon"></div>
                 <div class="menu_text">投稿一覧</div>
             </a>
-            <a class="menu_btn" id="btn2" href="http://localhost/D-E-C_team-H/public/sharet/create">
+            <a class="menu_btn" id="btn2" href="http://localhost/D-E-C_team-H/public/create">
                 <div class="menu_icon"></div>
                 <div class="menu_text">投稿する</div>
             </a>
