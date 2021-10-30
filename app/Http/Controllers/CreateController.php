@@ -9,7 +9,9 @@ class CreateController extends Controller
 {
     public function index(Request $request){
         $user_data = $request->session()->get('user_data');
-        return view ('sharet/create',$user_data);
+        // var_dump($user_data);
+        // exit;
+        return view ('sharet.create',['user_data' => $user_data]);
     }
     
     // public function create(Request $request){
