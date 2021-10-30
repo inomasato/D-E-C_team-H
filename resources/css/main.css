@@ -144,4 +144,5 @@ footer{
     justify-content: center;
     position: relative;
     height: 100%;
+    z-index: 5;
 }
