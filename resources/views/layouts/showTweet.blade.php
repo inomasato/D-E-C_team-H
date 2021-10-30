@@ -7,7 +7,7 @@
             <div class="tweet_head">
                 <div class="icon_frame">
                     <div class="icon" style="color:#FFFFFF; background-color:#2FBEC7 ; border: solid #A8A8A8">
-                        ＠
+                        
                     </div>
                 </div>
                 <div class="other_name">

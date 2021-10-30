@@ -10,6 +10,7 @@
 @section('content')
 
     <form action="add" method="POST">
+        @csrf
     <table>
         @csrf
         @if ($errors->has('name'))

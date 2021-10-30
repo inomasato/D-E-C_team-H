@@ -7,7 +7,8 @@ use App\Mypage;
 
 class MypageController extends Controller
 {
-    public function index(){
-        return view('mypage.index');
+    public function index(Request $request){
+        $user_Data = $request->session()->put('userData');
+        return view('mypage.index', ['user_data' => $user_Data]);
     }
 }
