@@ -24,27 +24,27 @@
             <div id="logout">ログアウト</div>
         </header>
         <nav>
-            <a class="menu_btn" id="btn1" href="http://localhost/demo/public/sharet">
+            <a class="menu_btn" id="btn1" href="http://localhost/D-E-C_team-H/public/sharet">
                 <div class="menu_icon"></div>
                 <div class="menu_text">投稿一覧</div>
             </a>
-            <a class="menu_btn" id="btn2" href="http://localhost/demo/public/sharet/create">
+            <a class="menu_btn" id="btn2" href="http://localhost/D-E-C_team-H/public/sharet/create">
                 <div class="menu_icon"></div>
                 <div class="menu_text">投稿する</div>
             </a>
-            <a class="menu_btn" id="btn3" href="http://localhost/demo/public/mypage">
+            <a class="menu_btn" id="btn3" href="http://localhost/D-E-C_team-H/public/mypage">
                 <div class="menu_icon"></div>
                 <div class="menu_text">マイページ</div>
             </a>
-            <a class="menu_btn" id="btn4" href="http://localhost/demo/public/hello">
+            <a class="menu_btn" id="btn4" href="http://localhost/D-E-C_team-H/public/hello">
                 <div class="menu_icon"></div>
                 <div class="menu_text">お気に入りリスト</div>
             </a>
-            <a class="menu_btn" id="btn5" href="http://localhost/demo/public/hello">
+            <a class="menu_btn" id="btn5" href="http://localhost/D-E-C_team-H/public/hello">
                 <div class="menu_icon"></div>
                 <div class="menu_text">Coming soon...</div>
             </a>
-            <a class="menu_btn" id="btn6" href="http://localhost/demo/public/hello">
+            <a class="menu_btn" id="btn6" href="http://localhost/D-E-C_team-H/public/hello">
                 <div class="menu_icon"></div>
                 <div class="menu_text">Coming soon...</div>
             </a>
