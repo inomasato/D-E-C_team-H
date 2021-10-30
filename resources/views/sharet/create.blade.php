@@ -1,78 +1,22 @@
-{{-- @extends('layouts.main')
+@extends('layouts.main')
 @section('title','INDEX')
-@section('content',$items->css)
+@section('css')
+<link rel="stylesheet" href="{{ asset('..\resources\css\create.css') }}">
+@endsection
+@section('user_trueName',$user_data->user_trueName)
 @section('content')
+    <tr class="tweets_form"><th>投稿フォーム</th></tr>
     <div class='writing'>
-        <form method="post" actions="/sharet/tweets">
-          <textarea name="sharet" rows="100"cols = "200">投稿しよう
+        <form method="post" actions="/sharet/create">
+          <textarea class= "create" name="sharet" >投稿しよう
           </textarea><br>
-          <input type="submit" value="投稿する">
         </form>
+        <input type="radio" class= "button1" name="feel">
+        <div class="positive" >ポジティブ</div> 
+        <input type="radio" class= "button2" name="feel">
+        <div class="negative">ネガティブ</div> 
+        <input type="submit"  class="do" value="投稿する">
+        <input type="submit" class="undo" value="投稿しない">
     </div>
 @endsection
-@section('footer') --}}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0 user-scalable=no">
-    <title>@yield('title')</title>
-    <link rel="stylesheet" href="{{ asset('..\resources\css\create.css') }}">
-    @yield('css')
-    <style>
-
-    </style>
-</head>
-<body>
-    <div class="menu">
-        <header>
-            <div id="head_left_names">
-                <div id="hospital_name">デモクリニック</div>
-                <div id="account_name">
-                    @yield('user_trueName')
-                </div>
-            </div>
-            <div id="site_name">Sharet</div>
-            <div id="logout">ログアウト</div>
-        </header>
-        <nav>
-            <a class="menu_btn" id="btn1" href="http://localhost/demo/public/hello">
-                <div class="menu_icon"></div>
-                <div class="menu_text">投稿一覧</div>
-            </a>
-            <a class="menu_btn" id="btn2" href="http://localhost/demo/public/hello">
-                <div class="menu_icon"></div>
-                <div class="menu_text">投稿する</div>
-            </a>
-            <a class="menu_btn" id="btn3" href="http://localhost/demo/public/hello">
-                <div class="menu_icon"></div>
-                <div class="menu_text">マイページ</div>
-            </a>
-            <a class="menu_btn" id="btn4" href="http://localhost/demo/public/hello">
-                <div class="menu_icon"></div>
-                <div class="menu_text">お気に入りリスト</div>
-            </a>
-            <a class="menu_btn" id="btn5" href="http://localhost/demo/public/hello">
-                <div class="menu_icon"></div>
-                <div class="menu_text">Coming soon...</div>
-            </a>
-            <a class="menu_btn" id="btn6" href="http://localhost/demo/public/hello">
-                <div class="menu_icon"></div>
-                <div class="menu_text">Coming soon...</div>
-            </a>
-        </nav>
-    </div>
-    <div class="contents">
-        <div class="content">
-            @yield('content')
-        </div>
-    </div>
-
-    <div class="footer">
-        <footer>
-            @yield('footer')
-        </footer>
-    </div>
-</body>
-</html>
+@section('footer') 

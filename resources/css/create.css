@@ -6,142 +6,110 @@
     padding: 0;
 }
 
-html{
-    min-height: 100vh;
-    width: 100%;
+#btn2{
+    background-color: #2DA2BC;
 }
 
-html::-webkit-scrollbar {
-    display:none;
-}
-
-body{
-    height: 100%;
-    margin:0 ;
-    font-family: 'Nunito', sans-serif;
+.tweets_form{
+    position: absolute;
+    width: 144px;
+    height: 28px;
+    left: 648px;
+    top: 223px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
     display: flex;
-    justify-content: center;
-    position: relative;
-}
-
-.menu{
-    height: 17vh;
-    margin-top: 0;
-    margin-left: 0;
-    width: 100%;
-    position: fixed;
-    overflow: hidden;
-    box-sizing:border-box;
-}
-
-header{
-    height: 40%;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    background-color: #EFEFEF;
-}
-
-
-#head_left_names,#site_name,#logout{
-    height: 100%;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 11pt;
-    color: #2FBEC7;
-   
-}
-
-#head_left_names{
-    position: absolute;
-    margin-left: 2%;
-    left: 0;
-    width: max-content;
-}
-
-#hospital_name,#account_name{
-    word-break: keep-all;
-    display: inline-block;
-    position:static;
-    width: max-content;
-    left: 0;
-    margin-left: 5%;
-    text-align: left;
-}
-
-#site_name{
-    font-size: 16pt;
-}
-
-#logout{
-    position: absolute;
-    right:0;
-    margin-right: 2%;
-}
-
-nav{
-    height: 60%;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    background-color:#2FBEC7;
-    border-bottom:solid #2DA2BC;
-
-}
-
-.menu_btn{
-    height: 100%;
-    width: 13.5%;
     text-align: center;
-    background-color:#2FBEC7;
-    border-left:solid #2DA2BC;
-    text-decoration: none;
+    
+    color: #2FBEC7;
+    
 }
 
-.menu_icon{
-    height: 70%;
+.create{
+    position: absolute;
+    width: 768px;
+    height: 329px;
+    left: 336px;
+    top: 294px;
+
+    background: #FFFFFF;
+    border: 1px solid #A8A8A8;
+    box-sizing: border-box;
+    border-radius: 10px;
 }
 
-.menu_text{
-    margin-bottom: 0;
-    height: 30%;
-    color: #FFF;
-    text-decoration: none;
-    font-size: 9pt;
-}
-
-#btn6{
-    border-right:solid #2DA2BC;
-}
-
-.contents{
-    width:50%;
-    margin-top: 17vh;
-    padding-top: 2%;
-    border: solid red;
-    clear: both;
-}
-
-.content{
-    height: 100%;
-    border: solid green;
+.positive{
+    position: absolute;
+    width: 119px;
+    height: 28px;
+    left: 490px;
+    top: 688px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
     display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #D85538;
 }
 
-.footer{
-    position: fixed;
-    overflow: hidden;
-    box-sizing:border-box;
-    width: 100%;
-    height: 6vh;
-    bottom: 0;
-    background-color:#dbdbdb;
-}
-
-footer{
+.negative{
+    position: absolute;
+    width: 119px;
+    height: 28px;
+    left: 867px;
+    top: 688px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
     display: flex;
-    justify-content: center;
-    position: relative;
-    height: 100%;
+    align-items: center;
+    text-align: center;
+    
+    color: #B367FF;
+}
+
+.do{
+    position: absolute;
+    width: 140px;
+    height: 50px;
+    left: 650px;
+    top: 782px;
+    
+    background: #2FBEC7;
+    border: 1px solid #2DA2BC;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.undo{
+    position: absolute;
+    width: 144px;
+    height: 28px;
+    left: 648px;
+    top: 877px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #2FBEC7;
+    
 }
