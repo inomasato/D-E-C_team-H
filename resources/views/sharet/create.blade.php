@@ -8,6 +8,7 @@
     <tr class="tweets_form"><th>投稿フォーム</th></tr>
     <div class='writing'>
         <form method="post" actions="/sharet/create">
+          @csrf
           <textarea class= "create" name="sharet" >投稿しよう
           </textarea><br>
         </form>
