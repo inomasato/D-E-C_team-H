@@ -24,7 +24,7 @@ class AuthController extends Controller
             $user_data =  $request->session()->get('user_data');
 
             if($judge){
-                
+
                 $modelTweet = new Tweet();
                 $modelLike  = new Like();
         
@@ -62,7 +62,6 @@ class AuthController extends Controller
                     $items[$i] = array_merge($like_judge[$i],$convert[$i]);
                 }
                 
-        
                 return view('/sharet.index',['items'=>$items]);
             }
             
