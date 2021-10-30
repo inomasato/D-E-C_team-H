@@ -38,3 +38,8 @@ Route::get('tweet', 'App\Http\Controllers\TweetController@model');
 
 Route::get('hello/add','App\Http\Controllers\HelloController@add');
 Route::post('hello/add','App\Http\Controllers\HelloController@create');
+
+Route::get('follower', 'App\Http\Controllers\FollowerController@index');
+
+Route::get('mypage', 'App\Http\Controllers\MypageController@index');
+Route::post('mypage','App\Http\Controllers\MypageController@index');
