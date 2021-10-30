@@ -10,7 +10,7 @@
     background-color: #2DA2BC;
 }
 
-.tweets_form{
+/* .tweets_form{
     position: absolute;
     width: 144px;
     height: 28px;
@@ -28,7 +28,7 @@
     
     color: #2FBEC7;
     
-}
+} */
 
 .create{
     position: absolute;
@@ -112,4 +112,8 @@
     
     color: #2FBEC7;
     
+}
+
+.button1{
+    color: #000;
 }

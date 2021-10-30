@@ -5,11 +5,11 @@
 @endsection
 @section('user_trueName',$user_data->user_trueName)
 @section('content')
-    <tr class="tweets_form"><th>投稿フォーム</th></tr>
+    <tr><th>投稿フォーム</th></tr>
     <div class='writing'>
         <form method="post" actions="/sharet/create">
-          <textarea class= "create" name="sharet" >投稿しよう
-          </textarea><br>
+          @csrf
+          <textarea class= "create" name="sharet" >投稿しよう</textarea><br>
         </form>
         <input type="radio" class= "button1" name="feel">
         <div class="positive" >ポジティブ</div> 
