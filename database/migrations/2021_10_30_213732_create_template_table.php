@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdmTable extends Migration
+class CreateTemplateTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateAdmTable extends Migration
      */
     public function up()
     {
-        Schema::create('adm', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('mail');
-            $table->integer('age');
+        Schema::create('template', function (Blueprint $table) {
+            $table->increments('template_id');
+            $table->string('template_word');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateAdmTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('adm');
+        Schema::dropIfExists('template');
     }
 }

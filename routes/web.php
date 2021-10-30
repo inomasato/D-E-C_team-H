@@ -33,6 +33,10 @@ Route::get('sharet','App\Http\Controllers\SharetController@index');
 // middleware(AuthMiddleware::class);
 Route::post('sharet','App\Http\Controllers\SharetController@index');
 
+Route::get('sharet\reply','App\Http\Controllers\SharetController@reply');
+// middleware(AuthMiddleware::class);
+Route::post('sharet\reply','App\Http\Controllers\SharetController@reply');
+
 Route::get('hello','App\Http\Controllers\HelloController@index');
 Route::post('hello','App\Http\Controllers\HelloController@post');
 
