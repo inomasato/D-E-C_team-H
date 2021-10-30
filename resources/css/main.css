@@ -119,13 +119,11 @@ nav{
     width:50%;
     margin-top: 17vh;
     padding-top: 2%;
-    border: solid red;
     clear: both;
 }
 
 .content{
     height: 100%;
-    border: solid green;
     display: flex;
 }
 

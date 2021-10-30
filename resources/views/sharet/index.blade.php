@@ -6,8 +6,6 @@
 
 @section('user_trueName',$user_data->user_trueName)
 @section('content')
-    <div class='inner'>
-        <h1 class='content_text'>これはH1ページだ</h1>
-    </div>
+    @include('layouts.showTweet')
 @endsection
 @section('footer')
