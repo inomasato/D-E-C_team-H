@@ -5,7 +5,8 @@
 @endsection
 @section('user_trueName',$user_data->user_trueName)
 @section('content')
-    <tr><th>投稿フォーム</th></tr>
+<div class= 'contents'>
+    <div class = tweets_form>投稿フォーム</div>
     <div class='writing'>
         <form method="post" actions="/sharet/create">
           @csrf
@@ -16,7 +17,8 @@
         <input type="radio" class= "button2" name="feel">
         <div class="negative">ネガティブ</div> 
         <input type="submit"  class="do" value="投稿する">
-        <input type="submit" class="undo" value="投稿しない">
+        <input type="submit" class="undo" value="投稿しない"> 
     </div>
+</div>
 @endsection
 @section('footer') 

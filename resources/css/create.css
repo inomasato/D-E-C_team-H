@@ -10,32 +10,26 @@
     background-color: #2DA2BC;
 }
 
-/* .tweets_form{
-    position: absolute;
-    width: 144px;
-    height: 28px;
-    left: 648px;
-    top: 223px;
+.tweets_form{
     
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
+    font-size: 28px;
     line-height: 28px;
     display: flex;
+    justify-content: center;
     align-items: center;
     text-align: center;
-    
     color: #2FBEC7;
     
-} */
+} 
 
 .create{
-    position: absolute;
-    width: 768px;
-    height: 329px;
-    left: 336px;
-    top: 294px;
+    
+    width: 100%;
+    height: 200px;
+    text-align: center;
 
     background: #FFFFFF;
     border: 1px solid #A8A8A8;
@@ -43,13 +37,13 @@
     border-radius: 10px;
     z-index: 1;
 }
+.contents{
+    /* border: 1px solid #A8A8A8; */
+    width: 500px;
+
+} 
 
 .positive{
-    position: absolute;
-    width: 119px;
-    height: 28px;
-    left: 490px;
-    top: 688px;
     
     font-family: Roboto;
     font-style: normal;
@@ -57,52 +51,39 @@
     font-size: 20px;
     line-height: 20px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
     z-index: 0;
     
     color: #D85538;
 }
 
 .negative{
-    position: absolute;
-    width: 119px;
-    height: 28px;
-    left: 867px;
-    top: 688px;
     
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 28px;
-    display: flex;
-    align-items: center;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
     color: #B367FF;
 }
 
 .do{
-    position: absolute;
-    width: 140px;
-    height: 50px;
-    left: 650px;
-    top: 782px;
-    
     background: #2FBEC7;
     border: 1px solid #2DA2BC;
     box-sizing: border-box;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .undo{
-    position: absolute;
-    width: 144px;
-    height: 28px;
-    left: 648px;
-    top: 877px;
-    
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -118,4 +99,4 @@
 
 .button1{
     color: #000;
-}
+} 
