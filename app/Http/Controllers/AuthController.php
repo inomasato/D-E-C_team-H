@@ -13,18 +13,15 @@ class AuthController extends Controller
         
         if($request->session()->has('user_id')){
             $user_data =  $request->session()->get('user_data');
-            return view('sharet.index');
+            return view('sharet.index',['user_data'=>$user_data]);
         }else{
     
             $judge = $model->authUser($request);
 
             $user_data =  $request->session()->get('user_data');
 
-            $user_id = $user_data['user_id'];
-            $user_trueName =  $user_data['user_tureName'];
-
             if($judge){
-                return view('sharet.index',['user_id' => $user_id, 'user_trueName' => $user_trueName ]);
+                return view('sharet.index',['user_data'=>$user_data]);
             }
             
             return redirect('login');
