@@ -30,6 +30,7 @@ class User extends Model
         ->where('user_password',$password)->limit(1)->get();
 
         if(isset($user_data[0]->user_id)){
+            $request->session()->flush();
             $request->session()->put('user_data',$user_data[0]);
             return true;
         }else{

@@ -1,20 +1,28 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Middleware;
 
 use App\Models\User;
+use Closure;
 use Illuminate\Http\Request;
 
-class AuthController extends Controller
+class LoginMiddleware
 {
-    public function login (Request $request){
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
+    public function handle(Request $request, Closure $next)
+    {
 
         $model = new User();
         
         if($request->session()->has('user_id')){
             $user_data =  $request->session()->get('user_data');
-            $ctr = app()->make('App\Http\Controllers\SharetController');
-            $ctr->index($request);
+            return view('sharet.index',['user_data'=>$user_data]);
         }else{
     
             $judge = $model->authUser($request);
@@ -22,13 +30,13 @@ class AuthController extends Controller
             $user_data =  $request->session()->get('user_data');
 
             if($judge){
-                $ctr = app()->make('App\Http\Controllers\SharetController');
-                $ctr->index($request);
+                return view('sharet.index',['user_data'=>$user_data]);
             }
             
             return redirect('login');
            
         }
 
+        return $next($request);
     }
 }

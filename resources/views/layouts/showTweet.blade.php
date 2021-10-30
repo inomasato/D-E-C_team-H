@@ -1,4 +1,5 @@
-<form action="?" >
+<form action="?" method="POST">
+    @csrf
     <div class="tweet_frame">
         <button type="submit" formaction="myPage" value="ユーザーID">
             <div class="tweet_head">

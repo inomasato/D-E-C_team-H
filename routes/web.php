@@ -26,6 +26,7 @@ Route::get('/',function(){
 Route::get('login',function(){
   return view('logins.login');
 });
+
 Route::post('login','App\Http\Controllers\AuthController@login');
 
 Route::get('shalet','App\Http\Controllers\SharetController@index')->middleware(AuthMiddleware::class);
@@ -43,6 +44,3 @@ Route::get('follower', 'App\Http\Controllers\FollowerController@index');
 
 Route::get('mypage', 'App\Http\Controllers\MypageController@index');
 Route::post('mypage','App\Http\Controllers\MypageController@index');
-
-Route::get('create', 'App\Http\Controllers\CreateController@index');
-// Route::post('create','App\Http\Controllers\CreateController@index');
