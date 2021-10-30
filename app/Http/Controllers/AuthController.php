@@ -17,12 +17,14 @@ class AuthController extends Controller
             return view('sharet.index',['items'=>$items]);
 
         }else{
-
+    
             $judge = $model->authUser($request);
 
-            if(!$judge) return redirect('/login');
+            if(!$judge){
+                return redirect('login');
+            }
 
-            $items['css'] = 'index';
+            $items = ['css' => 'index'];
 
             return view('sharet.index',['items'=>$items]);
            

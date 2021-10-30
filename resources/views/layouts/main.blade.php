@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0 user-scalable=no">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('..\resources\css\main.css') }}">
-    <link rel="stylesheet" href="{{ asset('..\resources\css\@yield('css')') }}">
+    @yield('css')
     <style>
 
     </style>
@@ -59,21 +59,5 @@
             @yield('footer')
         </footer>
     </div>
-
-
-    <h1>@yield('title')</h1>
-    @section('menubar')
-    <h2 class="menutitle"></h2>
-    <ul>
-        <li>@show</li>
-    </ul>
-    <hr size="1">
-    <div class="content">
-        @yield('content')
-    </div>
-    <div class="footer">
-        @yield('footer')
-    </div>
-    
 </body>
 </html>

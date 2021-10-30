@@ -14,7 +14,7 @@ class User extends Model
     // テーブル名のセット
     protected $table = 'user';
     // 主キーのセット
-    protected $guarded = ['user_id'];
+
     // 自動タイムスタンプ挿入の是非
     // trueにするとデータインサート・アップデート時に勝手にtimestamp型のカラムに値が入ります。falseだと入りません
     public $timestamps = true;
@@ -27,10 +27,10 @@ class User extends Model
         $password = $request->password;
 
         $user_data = DB::table($this->table)->where('user_loginId',$loginId)
-        ->where('user_password',$password)->where('deleted_at',null)->limit(1)->get();
+        ->where('user_password',$password)->limit(1)->get();
 
-        if(isset($user_data->user_id)){
-            session()->put(['user_data'=>$user_data]);
+        if(isset($user_data[0]->user_id)){
+            session()->put(['user_data'=>$user_data[0]]);
             return true;
         }else{
             return false;

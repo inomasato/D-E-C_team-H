@@ -1,6 +1,8 @@
 @extends('layouts.main')
 @section('title','INDEX')
-@section('content',$items->css)
+@section('css')
+<link rel="stylesheet" href="{{ asset('..\resources\css\index.css') }}">
+@endsection
 @section('content')
     <div class='inner'>
         <h1 class='content_text'>これはH1ページだ</h1>

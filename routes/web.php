@@ -24,11 +24,9 @@ Route::get('/',function(){
 });
 
 Route::get('login',function(){
-    view('logins.login');
+    return view('logins.login');
 });
-Route::post('login',function(){
-    view('logins.login');
-});
+Route::post('login','App\Http\Controllers\AuthController@login');
 
 Route::get('shalet','App\Http\Controllers\SharetController@index')->middleware(AuthMiddleware::class);
 Route::post('shalet','App\Http\Controllers\SharetController@index')->middleware(AuthMiddleware::class);

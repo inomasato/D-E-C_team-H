@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0 user-scalable=no">
-    <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('..\resources\css\logins.css') }}">
     <style>
 
@@ -17,6 +16,7 @@
     <div class='content'>    
         <div class="form_content">
             <form action="login" method="POST">
+                @csrf
                 <div class="form_text">ログインID</div>
                 <input type="text" name="loginId">
                 <br>
