@@ -24,15 +24,15 @@
             <div id="logout">ログアウト</div>
         </header>
         <nav>
-            <a class="menu_btn" id="btn1" href="http://localhost/demo/public/hello">
+            <a class="menu_btn" id="btn1" href="http://localhost/demo/public/sharet">
                 <div class="menu_icon"></div>
                 <div class="menu_text">投稿一覧</div>
             </a>
-            <a class="menu_btn" id="btn2" href="http://localhost/demo/public/hello">
+            <a class="menu_btn" id="btn2" href="http://localhost/demo/public/sharet/create">
                 <div class="menu_icon"></div>
                 <div class="menu_text">投稿する</div>
             </a>
-            <a class="menu_btn" id="btn3" href="http://localhost/demo/public/hello">
+            <a class="menu_btn" id="btn3" href="http://localhost/demo/public/mypage">
                 <div class="menu_icon"></div>
                 <div class="menu_text">マイページ</div>
             </a>
