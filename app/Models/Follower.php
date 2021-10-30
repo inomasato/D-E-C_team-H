@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Follower extends Model
 {
-    protected $guarded = array('user_id');
+    // protected $guarded = array('user_id');
 
     public static $rules = array(
         'follower_id' => 'required',
