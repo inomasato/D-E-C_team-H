@@ -6,13 +6,8 @@
         <button type="submit" formaction="myPage" value="{{ $item['user_id'] }}">
             <div class="tweet_head">
                 <div class="icon_frame">
-<<<<<<< HEAD
-                    <div class="icon" style="color:#FFFFFF; background-color:#2FBEC7 ; border: solid #A8A8A8">
-                        
-=======
                     <div class="icon" style="color:{{ $item['user_iconColor'] }}; background-color:{{ $item['user_iconBack'] }}; border: solid{{ $item['user_iconFrame'] }}">
                         {{ $item['user_iconText'] }}
->>>>>>> d05ace8f575e48d22e8ba651ae865d97932e4b06
                     </div>
                 </div>
                 <div class="other_name">

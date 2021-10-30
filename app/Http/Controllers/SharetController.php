@@ -12,6 +12,8 @@ class SharetController extends Controller
     public function index(Request $request)
     {
 
+        
+
         $modelTweet = new Tweet();
         $modelLike  = new Like();
 
@@ -40,8 +42,6 @@ class SharetController extends Controller
             unset($tweet);
         }
 
-        
-        $convert = [];
         $i = 0;
         foreach($tweets["tweets"] as $tweet){
              $convert[$i++] = (array)$tweet;
@@ -51,30 +51,13 @@ class SharetController extends Controller
             $items[$i] = array_merge($like_judge[$i],$convert[$i]);
         }
         
-        return view('sharet.index',['items'=>$items]);
+
+        return view('/sharet.index',['items'=>$items]);
+    }
+
+    public function loginGo (){
+
+        return redirect('sharet');
 
     }
 }
-        // foreach($likes as $like){
-        //     foreach($tweets['tweets'] as $tweet){
-        //         $like_judge[$judge_cnt] = ['like_judge' => 0];
-        //         if($like->like_tweet_id == $tweet->tweet_id){
-        //             $like_judge[$judge_cnt] = (object)['like_judge' => 1];
-        //             break;
-        //         }
-        //     }
-        //     $judge_cnt++;
-        //     unset($tweet);
-        // }
-
-        // $items = [$like_judge];
-
-        
-        // for($i=0; $i<count($like_judge); $i){
-        //     $items[$i] = array_merge($like_judge[$i],$tweets["tweets"][$i]);
-        // }
-
-        // foreach($items as $item){
-        //     print_r($item);
-            
-        // }
