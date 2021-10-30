@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-<p>{{ $session_data }}</p>
+{{-- <p>{{ $_session['user_id'] }}</p> --}}
 <table>
     <tr><th>あなたを応援している方↓</th></tr>
     @foreach ($items as $item)

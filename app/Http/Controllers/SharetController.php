@@ -12,8 +12,6 @@ class SharetController extends Controller
     public function index(Request $request)
     {
 
-        
-
         $modelTweet = new Tweet();
         $modelLike  = new Like();
 
@@ -42,6 +40,7 @@ class SharetController extends Controller
             unset($tweet);
         }
 
+        $convert = [];
         $i = 0;
         foreach($tweets["tweets"] as $tweet){
              $convert[$i++] = (array)$tweet;
@@ -55,9 +54,4 @@ class SharetController extends Controller
         return view('/sharet.index',['items'=>$items]);
     }
 
-    public function loginGo (){
-
-        return redirect('sharet');
-
-    }
 }
