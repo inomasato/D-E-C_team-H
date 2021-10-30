@@ -5,19 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0 user-scalable=no">
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="{{ asset('..\resources\css\main.css') }}">
-    <link rel="stylesheet" href="{{ asset('..\resources\css\@yield('css')') }}">
+    <link rel="stylesheet" href="{{ asset('..\resources\css\logins.css') }}">
     <style>
 
     </style>
 </head>
 <body>
     <header>
-        <div class="Sharet">Sharet</div>
+        <div class="sharet">Sharet</div>
     </header>
-        <form action="">
-            
-        </form>    
+    <div class='content'>    
+        <div class="form_content">
+            <form action="login" method="POST">
+                <div class="form_text">ログインID</div>
+                <input type="text" name="loginId">
+                <br>
+                <div class="form_text">パスワード</div>
+                <input type="text" name="password">
+                <br>
+                <input type="submit" class="btn" value="ログイン">
+            </form>
+        </div>
+    </div>    
     <footer></footer>
 </body>
 </html>

@@ -7,8 +7,11 @@ use Illuminate\Support\Facades\DB;
 
 class SharetController extends Controller
 {
-    public function main(Request $request)
+    public function index(Request $request)
     {
+
         
+
+        return view('logins.login');
     }
 }

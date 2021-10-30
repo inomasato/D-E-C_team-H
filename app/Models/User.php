@@ -31,8 +31,9 @@ class User extends Model
 
         if(isset($user_data->user_id)){
             session()->put(['user_data'=>$user_data]);
+            return true;
         }else{
-            return view();
+            return false;
         }
 
     }

@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Middleware\AuthMiddleware;
 use App\Http\Middleware\HelloMiddleware;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Node\Stmt;
 
@@ -20,6 +22,16 @@ Route::get('/',function(){
     return view('welcome');
 
 });
+
+Route::get('login',function(){
+    view('logins.login');
+});
+Route::post('login',function(){
+    view('logins.login');
+});
+
+Route::get('shalet','App\Http\Controllers\SharetController@index')->middleware(AuthMiddleware::class);
+Route::post('shalet','App\Http\Controllers\SharetController@index')->middleware(AuthMiddleware::class);
 
 Route::get('hello','App\Http\Controllers\HelloController@index');
 Route::post('hello','App\Http\Controllers\HelloController@post');

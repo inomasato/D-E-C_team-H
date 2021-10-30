@@ -24,7 +24,7 @@ class CreateUserTable extends Migration
             $table->integer('user_likeCount')->default(0);
             $table->integer('user_followCount')->default(0);
             $table->timestamps();
-            $table->datetime('deleted_at')->default(null);
+            $table->datetime('deleted_at')->nullable()->default(null);
         });
     }
 
