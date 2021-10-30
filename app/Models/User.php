@@ -30,8 +30,7 @@ class User extends Model
         ->where('user_password',$password)->limit(1)->get();
 
         if(isset($user_data[0]->user_id)){
-            $request->session()->put('user_id',$user_data[0]->user_id);
-            $request->session()->put('user_trueName',$user_data[0]->user_trueName);
+            $request->session()->put('user_data',$user_data[0]);
             return true;
         }else{
             return false;
