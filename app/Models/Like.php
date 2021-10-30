@@ -14,7 +14,7 @@ class Like extends Model
     public function getLike($user_id,$likeCount){
 
         $likes = DB::table($this->table)->where('like_user_id',$user_id)->limit($likeCount)->get();
-
+        
         return $likes;
 
     }

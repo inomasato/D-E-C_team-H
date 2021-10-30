@@ -14,6 +14,7 @@ class LikeTable extends Migration
     public function up()
     {
         Schema::create('like', function (Blueprint $table){
+            $table->increments('like_id');
             $table->integer('like_user_id')->unsigned();
             $table->foreign('like_user_id')->references('user_id')->on('user');
             $table->integer('like_tweet_id')->unsigned();

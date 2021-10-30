@@ -15,8 +15,7 @@
     </header>
     <div class='content'>    
         <div class="form_content">
-            {{-- <form action="login" method="POST"> --}}
-                <form action="login" method="POST">
+            <form action="login" method="POST">
                 @csrf
                 <div class="form_text">ログインID</div>
                 <input type="text" name="loginId">

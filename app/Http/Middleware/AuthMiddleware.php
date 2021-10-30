@@ -16,11 +16,12 @@ class AuthMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+        $user_data = $request->session()->get('user_data');
 
-        if($request->session()->has('user_id')){
+        if(isset($user_data->user_id)){
             return $next($request);
         }else{
-            return redirect('/login');
+            return redirect('login');
         }
         
     }
