@@ -23,7 +23,7 @@
                 <div class="form_text">パスワード</div>
                 <input type="text" name="password">
                 <br>
-                <button type="submit">ログイン</button>
+                <input type="submit" value="ログイン">
             </form>
         </div>
     </div>    

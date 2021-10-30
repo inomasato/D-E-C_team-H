@@ -29,8 +29,9 @@ Route::get('login',function(){
 
 Route::post('login','App\Http\Controllers\AuthController@login');
 
-Route::get('shalet','App\Http\Controllers\SharetController@index')->middleware(AuthMiddleware::class);
-Route::post('shalet','App\Http\Controllers\SharetController@index')->middleware(AuthMiddleware::class);
+Route::get('sharet','App\Http\Controllers\SharetController@index');
+// middleware(AuthMiddleware::class);
+Route::post('sharet','App\Http\Controllers\SharetController@index');
 
 Route::get('hello','App\Http\Controllers\HelloController@index');
 Route::post('hello','App\Http\Controllers\HelloController@post');
