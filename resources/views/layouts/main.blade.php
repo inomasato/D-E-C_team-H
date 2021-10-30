@@ -16,7 +16,9 @@
         <header>
             <div id="head_left_names">
                 <div id="hospital_name">テストクリニック</div>
-                <div id="account_name">テストオペレーター</div>
+                <div id="account_name">
+                    @yield('user_trueName')
+                </div>
             </div>
             <div id="site_name">Sharet</div>
             <div id="logout">ログアウト</div>
