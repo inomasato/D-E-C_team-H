@@ -22,7 +22,7 @@ class CreateTweetTable extends Migration
             $table->integer('tweet_likeCount')->default(0);
             $table->integer('tweet_replyCount')->default(0);
             $table->timestamps();
-            $table->dateTime('deleted_at')->default(null);
+            $table->dateTime('deleted_at')->nullable()->default(null);
         });
     }
     /**

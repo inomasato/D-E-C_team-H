@@ -11,18 +11,21 @@ class AuthController extends Controller
 
         $model = new User();
         
-        if(session()->has('user_id')){
-            return view('sharet.index');
+        if($request->session()->has('user_id')){
+            $items = ['user_id' => $request->session()->get('user_id'),
+                      'user_trueName'  =>  $request->session()->get('user_trueName'),
+            ];
+        
+            return view('sharet.index',$items);
         }else{
     
             $judge = $model->authUser($request);
 
-            $items = ['user_id' => $request->session()->get('user_id'),
-                      'user_id' =>  $request->session()->get('user_tureName'),
-            ];
+            $user_id = $request->session()->get('user_id');
+            $user_trueName =  $request->session()->get('user_tureName');
 
             if($judge){
-                return view('sharet.index',['items' => $items]);
+                return view('sharet.index',['user_id' => $user_id, 'user_trueName' => $user_trueName ]);
             }
             
             return redirect('login');

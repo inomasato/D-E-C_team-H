@@ -15,7 +15,7 @@
     <div class="menu">
         <header>
             <div id="head_left_names">
-                <div id="hospital_name">テストクリニック</div>
+                <div id="hospital_name">デモクリニック</div>
                 <div id="account_name">
                     @yield('user_trueName')
                 </div>

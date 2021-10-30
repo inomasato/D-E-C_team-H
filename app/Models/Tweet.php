@@ -33,7 +33,7 @@ class Tweet extends Model
     protected $guarded = ['tweet_id'];
     // 自動タイムスタンプ挿入の是非
     // trueにするとデータインサート・アップデート時に勝手にtimestamp型のカラムに値が入ります。falseだと入りません
-    public $timestamps = true;
+    public $timestamps = false;
 
     //テーブルデータ取得のメソッド
     public function getTweets(Request $request)
