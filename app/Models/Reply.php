@@ -39,11 +39,18 @@ class Reply extends Model
     public function getTemplate()
     {
         $template = DB::table('template')->get();
-        
+
         return (array)$template;
         
     }
 
+    public function createReply($tweet_id,$user_id,$template_id){
+        $param = [
+            'reply_tweet_id'    => $tweet_id,
+            'reply_user_id' => $user_id,
+            'reply_template_id' => $template_id,
+        ];
 
-
+        return DB::table($this->table)->insert($param);
+    }
 }

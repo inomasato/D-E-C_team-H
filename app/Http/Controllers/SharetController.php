@@ -108,4 +108,11 @@ class SharetController extends Controller
 
     }
 
+    public function addReply(Request $request){
+        $modelReply = new Reply();
+        $user_data = $request->session()->get('user_data');
+        $modelReply->addReply($request->tweet_id,$user_data->user_id,$request->template_id);
+        return redirect('/sharet');
+    }
+
 }

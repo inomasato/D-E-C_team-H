@@ -30,11 +30,12 @@ Route::get('login',function(){
 Route::post('login','App\Http\Controllers\AuthController@login');
 
 Route::get('sharet','App\Http\Controllers\SharetController@index');
-// middleware(AuthMiddleware::class);
 Route::post('sharet','App\Http\Controllers\SharetController@index');
 
+Route::get('sharet/addReply','App\Http\Controllers\SharetController@addReply');
+Route::post('sharet/addReply','App\Http\Controllers\SharetController@addReply');
+
 Route::get('sharet/reply','App\Http\Controllers\SharetController@reply');
-// middleware(AuthMiddleware::class);
 Route::post('sharet/reply','App\Http\Controllers\SharetController@reply');
 
 Route::get('hello','App\Http\Controllers\HelloController@index');

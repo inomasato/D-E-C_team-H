@@ -41,7 +41,7 @@
                         </select>
                     @endif
                 @endif
-                <button type="submit" class="temp_btn" formaction="">送る</button>
+                <button type="submit" class="temp_btn" value="{{ $item['tweet_id'] }}" formaction="sharet/addReply">送る</button>
             </div>
         
         </div>
