@@ -6,18 +6,20 @@
 @endsection
 
 @section('content')
-{{-- <p>{{ $_session['user_id'] }}</p> --}}
 <table>
     <tr><th>あなたを応援している方↓</th></tr>
-    @foreach ($items as $item)
+    @foreach ($items as 'item')
     <tr>
         <td>
-            @if($user_id = 'user_id'){
-                {{ $item->user_nickName }}
+            var_dump($user_jadge);
+            @if($user_nickName->user_nickName)
+            @if($user_id->user_id){
+                {{ (Sring)$item->user_nickName }}
             }
             @else{
                 投稿してみよう！！
             }
+            @endif
             @endif
         </td>
     </tr>

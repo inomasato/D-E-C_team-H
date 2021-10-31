@@ -1,28 +1,41 @@
-@extends('layouts.main')
 
-@section('mypage.css')
+@extends('layouts.main')
 
 @section('title')
     @parent
     マイページ
 @endsection
-
+@section('css')
+<link rel="stylesheet" href="{{ asset('..\resources\css\mypage.css') }}">
+@endsection
 @section('content')
-    {{-- @foreach ($datas as $data)
-        <div>{{ $data->user_nickName }}</div>
-        <div>{{ $data->user_trueName }}</div>
-        <div>{{ $data->user_likeCount }}</div>
-        <div>{{ $data->user_profile }}</div>
-    @endforeach --}}
-{{-- 
-    <h2>{{ $user_data[$user_nickName] }}</h2>
-    <p class = "trueName" >{{ $user_data['user_trueName'] }}</p>
-    <p class = "likecount">{{ $user_data['user_likeCount'] }}</p>
-    <a href="follower.php">あなたの応援者</a>
-    <p class = "profile">{{ $user_data['user_profile'] }}</p>
-    <a href="edit.php">プロフィールを編集する</a> --}}
-    {{-- テーブルを作ります --}}
 
-    @include('layouts.showTweet')
-
+@foreach ($items as $item)
+@if ($user_judge == 0 )
+    <div class="tweet_frame">
+            <div class="tweet_head">
+                <div class="icon_frame">
+                    <div class="icon" style="color:{{ $item['user_iconColor'] }}; background-color:{{ $item['user_iconBack'] }}; border: solid{{ $item['user_iconFrame'] }}">
+                        {{ $item['user_iconText'] }}
+                    </div>
+                </div>
+            </div>
+                <div class="my_nickName">
+                    {{ $item['user_nickName'] }}
+                </div>
+                <div class="my_trueName">
+                    {{ $item['user_trueName'] }}
+                </div>
+                <div class="my_likeCount">
+                    {{ $item['user_likeCount'] }}
+                </div>
+                <div class="my_profile">
+                    {{ $item['user_profile'] }}
+                </div>
+            </div>
+            <button class = "edit.php">プロフィールを編集する</button>
+        </button>
+    </div>
+    @endif
+@endforeach
 @endsection

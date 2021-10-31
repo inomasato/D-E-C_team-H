@@ -55,8 +55,9 @@ class MypageController extends Controller
         for($i=0; $i<count($like_judge); $i++){
             $items[$i] = array_merge($like_judge[$i],$convert[$i]);
         }
-        
+        // var_dump($user_judge);
+        // exit();
 
-        return view('mypage.index', ['items' => $items,'user_judge' => $user_judge]);
+        return view('mypage.index', ['items' => $items,'user_judge' => $user_judge, $tweets]);
     }
 }

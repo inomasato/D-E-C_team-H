@@ -1,6 +1,32 @@
 html{
     text-align:center;
     position:relative;
-    margin-top:20px;
+    margin-top:100px;
+}
+
+.icon_frame{
+    size:20px;
+    color: #333333;
+    background: color #2FBEC7; ;
+    border: #555;
+}
+
+.my_nickName{
+    text: color #2FBEC7;
+    font-size: 40px;
+}
+
+.my_trueName{
+    text-color:#2FBEC7;
+}
+
+.my_likeCount{
+    text-color:#fff;
+    border: #555;
+}
+
+.myprofile{
+    text-color:#fff;
+    
 }
 
