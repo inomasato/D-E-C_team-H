@@ -1,7 +1,10 @@
+@if($replys != "")
+
 @foreach ($replys as $item)
     
 <form action="?" method="POST">
     @csrf
+    <input type="hidden" name="tweet_id" value="{{ $item['reply_tweet_id'] }}">
     <div class="tweet_frame">
 
         <div class="afterbutton">
@@ -16,11 +19,7 @@
                 </div>
                 <div class="delete_btn_frame">
                     @if ($item['user_id'] == $ture_user_id)
-                        <button type="submit" formaction="reply" class="tweet_delete" name="delete_id" value="{{ $item['user_id'] }}">
-                            取り消す
-                        </button>
-                    @else
-                        <button type="submit" formaction="reply" class="tweet_delete" name="delete_id" value="{{ $item['user_id'] }}">
+                        <button type="submit" formaction="reply" class="tweet_delete" name="delete_id" value="{{ $item['reply_id'] }}">
                             取り消す
                         </button>
                     @endif
@@ -32,3 +31,4 @@
     </div>
 </form>
 @endforeach
+@endif
