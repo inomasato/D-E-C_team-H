@@ -22,9 +22,9 @@
               </div>
             </div>
             
-            <button type="submit"  class="do" value="投稿する">
+            <input type="submit"  class="do" value="投稿する">
         </form>
-          {{-- <input type="submit" class="undo" value="投稿しない">  --}}
+          <input type="submit" class="undo" value="投稿しない">  
       </div>
 </div>
 @endsection
