@@ -58,18 +58,6 @@ class Tweet extends Model
 
     }
 
-    public function addTweets(Request $request)
-    {
-
-        $param = [
-            'tweet_user_id' => $request->tweet_user_id,
-            'tweet_content' => $request->tweet_content,
-        ];
-
-        DB::table($this->table)->insert($param);
-
-    }
-
     public function getOneTweet($tweet_id){
 
         $tweet = DB::table('tweet')->join('user',function($join){
@@ -79,24 +67,26 @@ class Tweet extends Model
         return $tweet;
     }
 
-    public function createTweets($user_id,$content,$type){
+    public function createTweets($user_id,$tweet_content,$tweet_type){
 
         $param = [
             'tweet_user_id' => $user_id,
-            'tweet_content' => $content,
-            'tweet_type'    => $type
+            'tweet_content' => $tweet_content,
+            'tweet_type'    => $tweet_type
         ];
 
         return DB::table($this->table)->insert($param);
     } 
 
-    public function updateTweets(Request $request)
+    public function updateTweets($tweet_id,$tweet_content,$tweet_type)
     {
         $param = [
-            'tweet_content' => $request->tweet_content,
+            'tweet_id'      => $tweet_id,
+            'tweet_content' => $tweet_content,
+            'tweet_type'    => $tweet_type
         ];
 
-        DB::table($this->table)->where('tweet_id',$request->tweet_id)->update($param);
+        DB::table($this->table)->where('tweet_id',$tweet_id)->update($param);
     }
 
     public function deleteTweets(Request $request)
