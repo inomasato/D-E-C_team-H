@@ -10,21 +10,21 @@
     <div class='writing'>
         <form method="post" actions="/sharet/create">
             @csrf
-            <textarea class= "create" name="sharet" >投稿しよう</textarea>
+            <textarea class= "create" name="tweet_content" >投稿しよう</textarea>
             <div class="type_box">
               <div class="types">
-                <div class="radios"><input type="radio" class= "buttons" name="feel" value="ポジティブ"></div>
+                <div class="radios"><input type="radio" class= "buttons" name="tweet_type" value="ポジティブ"></div>
                 <div class="positive" >ポジティブ</div> 
               </div>
               <div class="types">
-                <div class="radios"><input type="radio" class= "buttons" name="feel" value="ネガティブ"></div>
+                <div class="radios"><input type="radio" class= "buttons" name="tweet_type" value="ネガティブ"></div>
                 <div class="negative">ネガティブ</div> 
               </div>
             </div>
             
-            <input type="submit"  class="do" value="投稿する">
+            <button type="submit"  class="do" value="投稿する">
         </form>
-          <input type="submit" class="undo" value="投稿しない"> 
+          {{-- <input type="submit" class="undo" value="投稿しない">  --}}
       </div>
 </div>
 @endsection
