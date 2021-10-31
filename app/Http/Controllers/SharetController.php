@@ -78,10 +78,21 @@ class SharetController extends Controller
         $replys = $modelReply->getReply($items[0]['tweet_id'],$items[0]['tweet_replyCount']);
         $replys = (array)$replys;
         $i=0;
-        
+
+        $template = $modelReply->getTemplate();
+
         foreach($replys as $item){
             foreach($item as $row){
                 $convert[$i][] = (array)$row;
+            }
+            $i++;
+        }
+
+        $i=0;
+        
+        foreach($template as $temps){
+            foreach($temps as $temp){
+                $words[$i][] = (array)$temp;
             }
             $i++;
         }
@@ -93,7 +104,7 @@ class SharetController extends Controller
         // var_dump($convert[0]);
         // exit();
     
-        return view('/sharet.reply',['items'=>$items,'replys' => $convert[0],'ture_user_id' => $user_data->user_id]);
+        return view('/sharet.reply',['items'=>$items,'replys' => $convert[0],'ture_user_id' => $user_data->user_id,'template' => $words[0]]);
 
     }
 

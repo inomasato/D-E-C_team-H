@@ -139,3 +139,8 @@ form{
     border-radius: 5px;
     color: #FFF;
 }
+
+
+.tweet_likeJudge{
+    display: flex;
+}

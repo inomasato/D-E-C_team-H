@@ -28,11 +28,22 @@
         </button>
 
         <div class="tweet_footer" >
-            <button type="submit" formaction="index" name="tweet_id" value="{{ $item['tweet_id'] }}">
-                <div class="tweet_likeJudge">
-                    
-                </div>
-            </button>
+            
+            <div class="tweet_likeJudge">
+                @if (isset($ture_user_id))
+                    @if( $item['user_id'] == $ture_user_id)
+                        <button >編集する</button>
+                    @else
+                        <select name='word'>
+                            @foreach ($template as $temp)
+                                <option value="{{ $temp['template_id'] }}">{{ $temp['template_word'] }}</option>
+                            @endforeach
+                        </select>
+                    @endif
+                @endif
+                <button type="submit" class="temp_btn" formaction="">送る</button>
+            </div>
+        
         </div>
     </div>
 </form>

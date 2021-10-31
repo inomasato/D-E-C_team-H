@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use SebastianBergmann\Template\Template;
+
 class Reply extends Model
 {
 
@@ -32,6 +34,14 @@ class Reply extends Model
     public function deleteReply($delete_id){
         DB::table($this->table)->where('reply_id',$delete_id)->delete();
         return ;
+    }
+
+    public function getTemplate()
+    {
+        $template = DB::table('template')->get();
+        
+        return (array)$template;
+        
     }
 
 
