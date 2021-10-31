@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Traits\EnumeratesValues;
 use App\Models\Like;
+use App\Models\Reply;
 use App\Models\Tweet;
 
 
@@ -52,6 +53,32 @@ class SharetController extends Controller
         
 
         return view('/sharet.index',['items'=>$items]);
+    }
+
+    public function reply (Request $request){
+
+        $modelTweet = new Tweet();
+        $modelReply = new Reply();
+
+        $tweet = $request->tweet_id;
+  
+        $tweet = $modelTweet->getOneTweet($request->tweet_id);
+        $like_judge[0] = ['like_judge' => $request->like_judge];
+        
+        $items[0] = (array)array_merge($like_judge[0], (array)$tweet[0]);
+
+        $replys = $modelReply->getReply($items[0]['tweet_id'],$items[0]['tweet_replyCount']);
+        $replys = (array)$replys;
+        $i=0;
+        foreach($replys as $item){
+            foreach($item as $row){
+                $convert[$i][] = (array)$row;
+            }
+            $i++;
+        }
+    
+        return view('/sharet.reply',['items'=>$items,'replys' => $convert[0]]);
+
     }
 
 }
