@@ -15,9 +15,15 @@
                     {{ $item['template_word'] }}
                 </div>
                 <div class="delete_btn_frame">
-                    <button type="submit" class="tweet_delete" name="delete_id" value="{{ $item['user_id'] }}">
-                        取り消す
-                    </button>
+                    @if ($item['user_id'] == $ture_user_id)
+                        <button type="submit" formaction="reply" class="tweet_delete" name="delete_id" value="{{ $item['user_id'] }}">
+                            取り消す
+                        </button>
+                    @else
+                        <button type="submit" formaction="reply" class="tweet_delete" name="delete_id" value="{{ $item['user_id'] }}">
+                            取り消す
+                        </button>
+                    @endif
                 </div>
 
             </div>
