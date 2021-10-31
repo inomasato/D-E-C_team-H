@@ -32,6 +32,7 @@ class MypageController extends Controller
         // $user_data->user_id,
         // $user_data->user_likeCount
         $judge_cnt = 0;
+        
 
 
         foreach($likes as $like){

@@ -1,3 +1,7 @@
+*{
+    margin:0px 0px 0px 0px;
+}
+
 html{
     text-align:center;
     position:relative;
@@ -5,14 +9,16 @@ html{
 }
 
 .icon_frame{
-    size:20px;
+    width:30px;
+    height:30px;
     color: #333333;
     background: color #2FBEC7; ;
     border: #555;
+    margin:0px 0px 0px 250px;
 }
 
 .my_nickName{
-    text: color #2FBEC7;
+    flex: color #2FBEC7;
     font-size: 40px;
 }
 
