@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div id="site_name">Sharet</div>
-            <div id="logout">ログアウト</div>
+            <a class="menu_btn" id="logout" href="http://localhost/D-E-C_team-H/public/logout">ログアウト</div>
         </header>
         <nav>
             <a class="menu_btn" id="btn1" href="http://localhost/D-E-C_team-H/public/sharet">

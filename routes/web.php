@@ -56,3 +56,5 @@ Route::post('create','App\Http\Controllers\CreateController@create');
 
 Route::get('update', 'App\Http\Controllers\CreateController@edit');
 Route::post('update','App\Http\Controllers\CreateController@update');
+
+Route::get('logout', 'App\Http\Controllers\LogoutsController@logout');
