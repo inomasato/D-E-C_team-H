@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('..\resources\css\index.css') }}">
 @endsection
 
-@section('user_trueName',"テスト")
+@section('user_trueName','テスト')
 @section('content')
     @include('layouts.showTweet')
 @endsection

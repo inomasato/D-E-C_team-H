@@ -41,7 +41,7 @@ class Tweet extends Model
      
         $tweets = DB::table($this->table)->join('user',function($join){
             $join->on('tweet.tweet_user_id','=','user.user_id');
-        })->where('tweet.deleted_at',null)->orderBy('tweet.tweet_id','desc')->offset($page)->limit(25)->get();
+        })->where('tweet.deleted_at',null)->orderBy('tweet.tweet_id','desc')->get();
 
         return ['page' => $page , 'tweets' => $tweets];
 
@@ -52,7 +52,7 @@ class Tweet extends Model
 
         $tweets = DB::table($this->table)->join('user',function($join){
             $join->on('tweet.tweet_user_id','=','user.user_id');
-        })->where('tweet.tweet_user_id',$user_id)->where('tweet.deleted_at',null)->orderBy('tweet.tweet_id','desc')->offset($page)->limit(25)->get();
+        })->where('tweet.tweet_user_id',$user_id)->where('tweet.deleted_at',null)->orderBy('tweet.tweet_id','desc')->get();
 
         return ['page' => $page , 'tweets' => $tweets];
 
@@ -78,6 +78,17 @@ class Tweet extends Model
 
         return $tweet;
     }
+
+    public function createTweets($user_id,$content,$type){
+
+        $param = [
+            'tweet_user_id' => $user_id,
+            'tweet_content' => $content,
+            'tweet_type'    => $type
+        ];
+
+        return DB::table($this->table)->insert($param);
+    } 
 
     public function updateTweets(Request $request)
     {

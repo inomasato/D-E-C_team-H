@@ -3,7 +3,6 @@
 <form action="?" method="POST">
     @csrf
     <input type="hidden" name="other_id" value="{{ $item['user_id'] }}">
-    <input type="hidden" name="like_judge" value="{{ $item['like_judge'] }}">
     <div class="tweet_frame">
         <button type="submit" formaction="myPage" name="other_id">
             <div class="tweet_head">
@@ -31,11 +30,7 @@
         <div class="tweet_footer" >
             <button type="submit" formaction="index" name="tweet_id" value="{{ $item['tweet_id'] }}">
                 <div class="tweet_likeJudge">
-                    @if($item['like_judge'] == 0)
-                        いいねする
-                    @else
-                        いいね済み
-                    @endif
+                    
                 </div>
             </button>
         </div>
