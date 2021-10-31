@@ -70,6 +70,15 @@ class Tweet extends Model
 
     }
 
+    public function getOneTweet($tweet_id){
+
+        $tweet = DB::table('tweet')->join('user',function($join){
+            $join->on('tweet.tweet_user_id','=','user.user_id');
+        })->where('tweet.tweet_id',$tweet_id)->limit(1)->get();
+
+        return $tweet;
+    }
+
     public function updateTweets(Request $request)
     {
         $param = [
