@@ -14,6 +14,7 @@ class CreateReplyTable extends Migration
     public function up()
     {
         Schema::create('reply', function (Blueprint $table) {
+            $table->increments('reply_id');
             $table->integer('reply_tweet_id')->unsigned();
             $table->foreign('reply_tweet_id')->references('tweet_id')->on('tweet');
             $table->integer('reply_user_id')->unsigned();
