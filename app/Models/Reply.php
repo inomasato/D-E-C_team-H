@@ -16,8 +16,8 @@ class Reply extends Model
         // var_dump([$tweet_id,$tweet_replyCount]);
         // exit();
 
-        $selectColumn = ['user.user_id','user.user_iconText','user.user_iconColor',
-        'user.user_iconBack','user.user_iconFrame','template.template_word'];
+        $selectColumn = ['user.user_id','user.user_iconText','user.user_iconColor','reply.reply_tweet_id',
+        'user.user_iconBack','user.user_iconFrame','template.template_word','reply.reply_id'];
 
         $replys = DB::table($this->table)->join('user',function($join){
             $join->on('reply.reply_user_id','=','user.user_id');
@@ -28,4 +28,12 @@ class Reply extends Model
         return $replys;
 
     }
+
+    public function deleteReply($delete_id){
+        DB::table($this->table)->where('reply_id',$delete_id)->delete();
+        return ;
+    }
+
+
+
 }

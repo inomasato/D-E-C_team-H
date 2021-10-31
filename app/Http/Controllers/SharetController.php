@@ -57,13 +57,14 @@ class SharetController extends Controller
 
     public function reply (Request $request){
 
-        if($request->delete_id){
-            var_dump($request->delete_id);
-            exit();
-        }
+        
 
         $modelTweet = new Tweet();
         $modelReply = new Reply();
+
+        if($request->has('delete_id')){
+            $modelReply->deleteReply($request->delete_id);
+        }
 
         $user_data = $request->session()->get('user_data');
 
@@ -77,12 +78,20 @@ class SharetController extends Controller
         $replys = $modelReply->getReply($items[0]['tweet_id'],$items[0]['tweet_replyCount']);
         $replys = (array)$replys;
         $i=0;
+        
         foreach($replys as $item){
             foreach($item as $row){
                 $convert[$i][] = (array)$row;
             }
             $i++;
         }
+
+        if(!isset($convert)){
+            $convert = [""];
+        }
+        
+        // var_dump($convert[0]);
+        // exit();
     
         return view('/sharet.reply',['items'=>$items,'replys' => $convert[0],'ture_user_id' => $user_data->user_id]);
 
