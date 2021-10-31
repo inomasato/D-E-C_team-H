@@ -52,3 +52,6 @@ Route::post('mypage','App\Http\Controllers\MypageController@index');
 
 Route::get('create', 'App\Http\Controllers\CreateController@index');
 Route::post('create','App\Http\Controllers\CreateController@create');
+
+Route::get('update', 'App\Http\Controllers\CreateController@index');
+Route::post('update','App\Http\Controllers\CreateController@update');

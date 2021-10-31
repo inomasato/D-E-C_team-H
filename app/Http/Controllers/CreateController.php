@@ -22,4 +22,11 @@ class CreateController extends Controller
         $modelTweet->createTweets($user_data->user_id,$request->tweet_content,$request->tweet_type);
         return redirect('/sharet');
     }
+
+    public function updete(Request $request){
+        $modelTweet = new Tweet();
+        $tweet_id = $request->tweet_id;
+        $modelTweet->updareTweets($tweet_id,$request->tweet_content,$request->tweet_type);
+        return redirect('/sharet');
+    }
 }
