@@ -21,6 +21,7 @@
                 <div class="negative">ネガティブ</div> 
               </div>
             </div>
+            <input type="hidden" name = "tweet_user_id" >
             
             <input type="submit"  class="do" value="投稿する">
         </form>
