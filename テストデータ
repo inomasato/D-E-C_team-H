@@ -1,0 +1,9 @@
+INSERT INTO `user` (`user_id`, `user_trueName`, `user_nickName`, `user_profile`, `user_sick`, `user_loginId`, `user_password`, `user_iconText`, `user_iconFrame`, `user_iconBack`, `user_likeCount`, `user_followCount`, `created_at`, `updated_at`, `deleted_at`) VALUES (NULL, '輝栖戸 太郎', 'テストマン', 'ぼくのなまえはテストマンです', 'エラー病', 'login', 'pass', '#FFFFFF', '#C4C4C4', '#2FBEC7', '0', '0', '', '', NULL), (NULL, '出雲 導叉', 'デモンゾーア', '貴様が使い物になるかどうか、我が試してやろう', '厨二病', 'signin', 'word', '#FFFFFF', '#C4C4C4', '#2FBEC7', '2', '5', '', '', NULL);
+
+INSERT INTO `tweet` (`tweet_id`, `tweet_user_id`, `tweet_content`, `tweet_type`, `tweet_likeCount`, `tweet_replyCount`, `created_at`, `updated_at`, `deleted_at`) VALUES (NULL, '1', 'ツイート１', 'ポジティブ', '2', '0', NULL, NULL, NULL), (NULL, '2', 'Twitte-2\r\nこれが二行目', 'ネガティブ', '0', '0', NULL, NULL, NULL);
+
+INSERT INTO `like` (`like_user_id`, `like_tweet_id`) VALUES ('2', '1'), ('2', '2');
+
+INSERT INTO `template`(`template_word`) VALUES ('テストテンプレート１'), ('テストテンプレート２'), ('テストテンプレート３'), ('テストテンプレート４'), ('テストテンプレート５');
+
+INSERT INTO `reply` (`reply_tweet_id`, `reply_user_id`, `reply_template_id`, `created_at`, `updated_at`) VALUES ('1', '2', '1', NULL, NULL), ('1', '2', '2', NULL, NULL), ('1', '2', '3', NULL, NULL), ('1', '2', '4', NULL, NULL), ('1', '2', '5', NULL, NULL);
